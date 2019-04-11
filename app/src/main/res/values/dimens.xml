@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="mar20">20dp</dimen>
+    <dimen name="mar80">80dp</dimen>
+    <dimen name="mar10">10dp</dimen>
+    <dimen name="mar3">3dp</dimen>
+    <dimen name="mar5">5dp</dimen>
+    <dimen name="mar8">8dp</dimen>
+    <dimen name="mar2">2dp</dimen>
+    <dimen name="mar15">15dp</dimen>
+    <dimen name="mar7">7dp</dimen>
+    <dimen name="mar6">6dp</dimen>
+</resources>

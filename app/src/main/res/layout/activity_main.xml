@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="#FFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/oooo">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbarMain"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/mar20"
+            android:layout_height="?attr/actionBarSize"
+            app:contentInsetStart="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/mar80">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="My AnimeList"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="#FFFF"
+                    android:fontFamily="@font/chlorinr"
+                    android:textSize="18sp"
+                    />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:background="@android:color/transparent"
+                    />
+            </RelativeLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+    </LinearLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/mar10"
+                android:layout_marginLeft="@dimen/mar10"
+                android:layout_marginBottom="@dimen/mar3"
+                android:layout_marginRight="@dimen/mar10"
+                android:background="@drawable/backorgt">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Season"
+                    android:layout_marginRight="@dimen/mar10"
+                    android:layout_marginLeft="@dimen/mar10"
+                    android:layout_marginTop="@dimen/mar10"
+                    android:fontFamily="@font/helveticaneue_medium"
+                    android:textColor="#FFFF"
+                    android:textSize="16sp"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="@dimen/mar10"
+                    android:layout_marginBottom="@dimen/mar10"
+                    android:layout_marginRight="@dimen/mar10"
+                    android:layout_marginTop="@dimen/mar10"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/backwth"
+                        android:weightSum="10"
+                        android:layout_marginEnd="@dimen/mar10">
+
+                        <Spinner
+                            android:id="@+id/spinnerMusim"
+                            android:layout_width="180dp"
+                            android:layout_height="35dp"
+                            style="@style/AppTheme2"
+                            android:spinnerMode="dropdown"
+                            android:paddingStart="@dimen/mar5">
+                        </Spinner>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_arrow"
+                            android:layout_marginEnd="@dimen/mar5"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/backwth"
+                        android:weightSum="10"
+                        android:layout_marginStart="@dimen/mar10">
+
+                        <Spinner
+                            android:id="@+id/spinnerTahun"
+                            android:layout_width="120dp"
+                            android:layout_height="35dp"
+                            style="@style/AppTheme2"
+                            android:spinnerMode="dropdown"
+                            android:paddingStart="@dimen/mar5"
+                            >
+                        </Spinner>
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_arrow"
+                            android:layout_marginEnd="@dimen/mar5"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"/>
+
+                    </RelativeLayout>
+
+                    <ImageButton
+                        android:id="@+id/search"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_reload"
+                        android:layout_weight="0.5"
+                        android:background="@android:color/transparent"/>
+                </LinearLayout>
+
+            </LinearLayout>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerSeason"
+                android:layout_width="match_parent"
+                android:layout_height="410dp"
+                android:paddingRight="@dimen/mar8"
+                android:focusableInTouchMode="false"
+                android:focusable="false"
+                app:fastScrollEnabled="false"
+                android:paddingLeft="@dimen/mar8">
+            </android.support.v7.widget.RecyclerView>
+
+            <RelativeLayout
+                android:id="@+id/more"
+                android:layout_marginTop="@dimen/mar2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/backorgb"
+                android:layout_marginRight="@dimen/mar10"
+                android:layout_marginLeft="@dimen/mar10"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_margin="@dimen/mar6"
+                    android:layout_height="wrap_content"
+                    android:text="more"
+                    android:textSize="16dp"
+                    android:fontFamily="@font/helvetica_neu_bold"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:textColor="#FFF"
+                    />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/topAnime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/mar10"
+                android:layout_marginLeft="@dimen/mar10"
+                android:layout_marginTop="@dimen/mar15"
+                android:layout_marginBottom="@dimen/mar5"
+                android:background="@drawable/backorg">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/helvetica_neu_bold"
+                        android:text="Top Anime"
+                        android:layout_margin="@dimen/mar7"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <ToggleButton
+                        android:id="@+id/sideTa"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="@dimen/mar5"
+                        android:src="@drawable/ic_side"
+                        android:background="@drawable/ic_side"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:textOff=""
+                        android:textOn=""/>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/linearTopAnime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/airing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/mar10"
+                    android:layout_marginRight="@dimen/mar10"
+                    android:layout_marginTop="@dimen/mar10"
+                    android:textColor="#000"
+                    android:fontFamily="@font/helveticaneue_medium"
+                    android:textSize="16sp"
+                    android:text="Airing"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3px"
+                    android:background="@color/oooo"
+                    android:layout_marginLeft="@dimen/mar10"
+                    android:layout_marginRight="@dimen/mar10"/>
+
+                <TextView
+                    android:id="@+id/tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/mar10"
+                    android:layout_marginRight="@dimen/mar10"
+                    android:layout_marginTop="@dimen/mar15"
+                    android:textColor="#000"
+                    android:fontFamily="@font/helveticaneue_medium"
+                    android:textSize="16sp"
+                    android:text="TV"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3px"
+                    android:background="@color/oooo"
+                    android:layout_marginLeft="@dimen/mar10"
+                    android:layout_marginRight="@dimen/mar10"/>
+
+
+
+                <!--<TextView-->
+                <!--android:id="@+id/upcoming"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_marginTop="15dp"-->
+                <!--android:textColor="#000"-->
+                <!--android:layout_marginRight="10dp"-->
+                <!--android:fontFamily="@font/helveticaneue_medium"-->
+                <!--android:textSize="16sp"-->
+                <!--android:text="Upcoming"-->
+                <!--/>-->
+
+                <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="3px"-->
+                <!--android:background="@color/oooo"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_marginRight="10dp"/>-->
+
+                <TextView
+                    android:id="@+id/special"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/mar10"
+                    android:layout_marginRight="@dimen/mar10"
+                    android:fontFamily="@font/helveticaneue_medium"
+                    android:textSize="16sp"
+                    android:textColor="#000"
+                    android:layout_marginTop="@dimen/mar15"
+                    android:text="Special"/>
+
+                <View
+                android:layout_width="match_parent"
+                android:layout_height="3px"
+                android:background="@color/oooo"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
+
+                <TextView
+                android:id="@+id/ova1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/helveticaneue_medium"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:layout_marginTop="15dp"
+                android:text="Ova"
+                />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3px"
+                    android:background="@color/oooo"
+                    android:layout_marginLeft="@dimen/mar10"
+                    android:layout_marginRight="@dimen/mar10"
+                    android:layout_marginBottom="@dimen/mar5"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/mar10"
+                android:id="@+id/topManga"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/backorg"
+                android:layout_marginRight="@dimen/mar10"
+                android:layout_marginLeft="@dimen/mar10"
+                android:layout_marginBottom="@dimen/mar5">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_marginBottom="3dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/helvetica_neu_bold"
+                        android:textSize="16sp"
+                        android:text="Top Manga"
+                        android:layout_margin="7dp"
+                        android:textColor="@color/white"/>
+
+                    <ToggleButton
+                        android:id="@+id/sideTa1"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="@dimen/mar5"
+                        android:src="@drawable/ic_side"
+                        android:background="@drawable/ic_side"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:textOff=""
+                        android:textOn=""/>
+
+
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearTopManga"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/manga"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/mar10"
+                    android:layout_marginRight="@dimen/mar10"
+                    android:layout_marginTop="@dimen/mar10"
+                    android:textColor="#000"
+                    android:fontFamily="@font/helveticaneue_medium"
+                    android:textSize="16sp"
+                    android:text="Manga"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3px"
+                    android:background="@color/oooo"
+                    android:layout_marginLeft="@dimen/mar10"
+                    android:layout_marginRight="@dimen/mar10"/>
+
+                <TextView
+                    android:id="@+id/novel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/mar10"
+                    android:layout_marginRight="@dimen/mar10"
+                    android:layout_marginTop="@dimen/mar15"
+                    android:textColor="#000"
+                    android:fontFamily="@font/helveticaneue_medium"
+                    android:textSize="16sp"
+                    android:text="Novel"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3px"
+                    android:background="@color/oooo"
+                    android:layout_marginLeft="@dimen/mar10"
+                    android:layout_marginRight="@dimen/mar10"/>
+
+                <TextView
+                    android:id="@+id/oneShots"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/mar10"
+                    android:layout_marginRight="@dimen/mar10"
+                    android:layout_marginTop="@dimen/mar15"
+                    android:textColor="#000"
+                    android:fontFamily="@font/helveticaneue_medium"
+                    android:textSize="16sp"
+                    android:text="OneShots"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3px"
+                    android:background="@color/oooo"
+                    android:layout_marginLeft="@dimen/mar10"
+                    android:layout_marginRight="@dimen/mar10"/>
+
+                <TextView
+                    android:id="@+id/doujin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/mar10"
+                    android:layout_marginRight="@dimen/mar10"
+                    android:layout_marginTop="@dimen/mar15"
+                    android:textColor="#000"
+                    android:fontFamily="@font/helveticaneue_medium"
+                    android:textSize="16sp"
+                    android:text="Doujin"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3px"
+                    android:background="@color/oooo"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/menhwa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/mar10"
+                    android:layout_marginRight="@dimen/mar10"
+                    android:layout_marginTop="@dimen/mar15"
+                    android:textColor="#000"
+                    android:fontFamily="@font/helveticaneue_medium"
+                    android:textSize="16sp"
+                    android:text="Manhwa"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3px"
+                    android:background="@color/oooo"
+                    android:layout_marginLeft="@dimen/mar10"
+                    android:layout_marginRight="@dimen/mar10"/>
+
+                <TextView
+                    android:id="@+id/menhua"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/mar10"
+                    android:layout_marginRight="@dimen/mar10"
+                    android:layout_marginTop="@dimen/mar15"
+                    android:textColor="#000"
+                    android:fontFamily="@font/helveticaneue_medium"
+                    android:textSize="16sp"
+                    android:text="Manhua"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3px"
+                    android:background="@color/oooo"
+                    android:layout_marginLeft="@dimen/mar10"
+                    android:layout_marginRight="@dimen/mar10"
+                    android:layout_marginBottom="@dimen/mar10"/>
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+
+
+</LinearLayout>
