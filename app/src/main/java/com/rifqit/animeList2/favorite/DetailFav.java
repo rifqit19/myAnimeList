@@ -16,7 +16,7 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.google.gson.Gson;
-import com.rifqit.animeList2.Database.FavObj;
+import com.rifqit.animeList2.favorite.FavObj;
 import com.rifqit.animeList2.Database.RealmHelper;
 import com.squareup.picasso.Picasso;
 
