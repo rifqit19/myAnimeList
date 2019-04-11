@@ -40,7 +40,6 @@ public class Favorite extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                onBackPressed();
                 Intent BackIntent = new Intent();
                 setResult(RESULT_OK,BackIntent);
                 finish();
@@ -105,7 +104,4 @@ public class Favorite extends AppCompatActivity {
             Toast.makeText(Favorite.this,"gagal",Toast.LENGTH_SHORT).show();
         }
     }
-//    public void deleteAll(){
-//        realm.deleteAll();
-//    }
 }
