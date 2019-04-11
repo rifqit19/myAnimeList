@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Favorite"
+    tools:context=".favorite.Favorite"
     android:orientation="vertical">
 
     <LinearLayout
@@ -39,6 +39,15 @@
                     android:textColor="#FFFF"
                     android:fontFamily="@font/chlorinr"
                     android:textSize="18sp"/>
+
+                <ImageButton
+                    android:id="@+id/deleteAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_deleteall"
+                    android:layout_marginEnd="10dp"
+                    android:layout_alignParentEnd="true"
+                    android:background="@android:color/transparent"/>
 
 
             </RelativeLayout>

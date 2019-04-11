@@ -1,4 +1,4 @@
-package com.rifqit.animeList2.Database;
+package com.rifqit.animeList2.favorite;
 
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;

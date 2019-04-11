@@ -1,7 +1,9 @@
-package com.rifqit.animeList2;
+package com.rifqit.animeList2.favorite;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -9,9 +11,8 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.rifqit.animeList2.Database.FavObj;
 import com.rifqit.animeList2.Database.RealmHelper;
-import com.rifqit.animeList2.Database.adapterFav;
+import com.rifqit.animeList2.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +27,7 @@ public class Favorite extends AppCompatActivity {
     RecyclerView recyclerView;
     adapterFav adapterFav;
     List<FavObj> favObjs;
-    ImageButton back;
+    ImageButton back,deleteAll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,7 @@ public class Favorite extends AppCompatActivity {
         setContentView(R.layout.activity_favorite);
 
         back = findViewById(R.id.backFav2);
+        deleteAll = findViewById(R.id.deleteAll);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,6 +44,29 @@ public class Favorite extends AppCompatActivity {
                 Intent BackIntent = new Intent();
                 setResult(RESULT_OK,BackIntent);
                 finish();
+            }
+        });
+
+        deleteAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                 new AlertDialog.Builder(Favorite.this)
+                        .setTitle("Hapus Semua")
+                        .setMessage(getString(R.string.apakah_kamu_yakinn_akan_mnghapus_semua_item_faforit_kamu))
+                        .setNegativeButton("Batal", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        })
+                        .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                realmHelper.deleteAll();
+                                finish();
+                            }
+                        }).show();
+
             }
         });
 
@@ -80,4 +105,7 @@ public class Favorite extends AppCompatActivity {
             Toast.makeText(Favorite.this,"gagal",Toast.LENGTH_SHORT).show();
         }
     }
+//    public void deleteAll(){
+//        realm.deleteAll();
+//    }
 }

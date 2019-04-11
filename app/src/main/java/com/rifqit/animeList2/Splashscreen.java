@@ -1,4 +1,4 @@
-package com.rifqit.animeList2.season;
+package com.rifqit.animeList2;
 
 import android.content.Intent;
 import android.os.Bundle;

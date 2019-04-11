@@ -1,4 +1,4 @@
-package com.rifqit.animeList2;
+package com.rifqit.animeList2.favorite;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -16,7 +16,7 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.google.gson.Gson;
-import com.rifqit.animeList2.favorite.FavObj;
+import com.rifqit.animeList2.R;
 import com.rifqit.animeList2.Database.RealmHelper;
 import com.squareup.picasso.Picasso;
 
@@ -52,13 +52,11 @@ public class DetailFav extends AppCompatActivity {
         synopF = findViewById(R.id.synopFav);
         webF = findViewById(R.id.webFav);
         backF = findViewById(R.id.backFav3);
-//        btnDeleteFav = findViewById(R.id.btnFavFav);
         toggleButton = findViewById(R.id.toggleFav);
 
         backF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                onBackPressed();
                 Intent BackIntent = new Intent();
                 setResult(RESULT_OK,BackIntent);
                 finish();
@@ -72,8 +70,6 @@ public class DetailFav extends AppCompatActivity {
         final String synop = getIntent().getStringExtra("synopsis");
         final String typ = getIntent().getStringExtra("type");
         final Integer mmbr = Integer.parseInt(getIntent().getStringExtra("member"));
-//        final Integer id = Integer.parseInt(getIntent().getStringExtra("id"));
-//        Log.e("realm", id.toString());
         final String img = getIntent().getStringExtra("img");
         final String epp = getIntent().getStringExtra("episode");
         final String web = getIntent().getStringExtra("web");
@@ -102,7 +98,6 @@ public class DetailFav extends AppCompatActivity {
         if (favObj1 == null) {
             toggleButton.setChecked(false);
             toggleButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_fav));
-
         }else{
             toggleButton.setChecked(true);
             toggleButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_redfav));

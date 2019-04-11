@@ -19,10 +19,10 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.rifqit.animeList2.GetDataService;
+import com.rifqit.animeList2.Database.GetDataService;
 import com.rifqit.animeList2.MainActivity;
 import com.rifqit.animeList2.R;
-import com.rifqit.animeList2.RetrofitCilentInstance;
+import com.rifqit.animeList2.Database.RetrofitCilentInstance;
 
 import org.json.JSONArray;
 import org.json.JSONException;

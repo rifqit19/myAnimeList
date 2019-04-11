@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.rifqit.animeList2.R;
-import com.rifqit.animeList2.topMangaDetail;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

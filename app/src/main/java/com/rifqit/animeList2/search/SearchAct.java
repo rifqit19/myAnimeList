@@ -14,9 +14,9 @@ import android.widget.ProgressBar;
 import android.widget.Spinner;
 
 import com.rifqit.animeList2.EndlessOnScrollListener;
-import com.rifqit.animeList2.GetDataService;
+import com.rifqit.animeList2.Database.GetDataService;
 import com.rifqit.animeList2.R;
-import com.rifqit.animeList2.RetrofitCilentInstance;
+import com.rifqit.animeList2.Database.RetrofitCilentInstance;
 
 import org.json.JSONArray;
 import org.json.JSONException;

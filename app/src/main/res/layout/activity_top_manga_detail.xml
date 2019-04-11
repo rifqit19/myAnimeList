@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".topMangaDetail"
+    tools:context=".TopManga.topMangaDetail"
     android:orientation="vertical">
 
     <LinearLayout
@@ -194,21 +194,16 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
-                            <!--<Button-->
-                                <!--android:id="@+id/btnFavDtm"-->
-                                <!--android:layout_width="wrap_content"-->
-                                <!--android:layout_height="35dp"-->
-                                <!--android:background="@color/oooo"-->
-                                <!--android:text="add to favorite"-->
-                                <!--android:textColor="#FFF"-->
-                                <!--android:paddingRight="10dp"-->
-                                <!--android:paddingLeft="10dp"-->
-                                <!--android:layout_marginTop="10dp"-->
-                                <!--android:fontFamily="@font/helveticaneue_medium"-->
-                                <!--android:textSize="10sp"/>-->
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_web_orange"
+                                android:layout_alignParentBottom="true"
+                                android:id="@+id/imgw6"/>
 
                             <TextView
                                 android:id="@+id/webDtm"
+                                android:layout_toRightOf="@id/imgw6"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="go to Web >>"

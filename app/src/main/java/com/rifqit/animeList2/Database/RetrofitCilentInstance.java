@@ -1,4 +1,4 @@
-package com.rifqit.animeList2;
+package com.rifqit.animeList2.Database;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

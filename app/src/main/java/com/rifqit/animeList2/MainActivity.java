@@ -28,6 +28,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import com.rifqit.animeList2.Database.GetDataService;
+import com.rifqit.animeList2.Database.RetrofitCilentInstance;
+import com.rifqit.animeList2.favorite.Favorite;
 import com.rifqit.animeList2.TopAnime.Airing;
 import com.rifqit.animeList2.TopAnime.Ova;
 import com.rifqit.animeList2.TopAnime.Special;
@@ -301,9 +304,6 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
-//        String tahunS = tahun.getSelectedItem().toString();
-//        String musimS = musim.getSelectedItem().toString();
-
         if (monthC.equals(1)||monthC.equals(2)||monthC.equals(3)){
             mn = "winter";
         }else if (monthC.equals(4)||monthC.equals(5)||monthC.equals(6)){
@@ -419,7 +419,7 @@ public class MainActivity extends AppCompatActivity{
     public boolean onOptionsItemSelected(MenuItem item){
         int id = item.getItemId();
         if (id == R.id.favorite){
-            Intent l = new Intent(MainActivity.this,Favorite.class);
+            Intent l = new Intent(MainActivity.this, Favorite.class);
 //            startActivity(l);
             mainActivity.startActivityForResult(l,2);
             return true;
@@ -515,7 +515,6 @@ public class MainActivity extends AppCompatActivity{
         recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setAdapter(adapterSeason);
     }
-
 //    @Override
 //    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 //    }

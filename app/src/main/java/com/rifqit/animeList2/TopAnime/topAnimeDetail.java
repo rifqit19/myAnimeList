@@ -1,4 +1,4 @@
-package com.rifqit.animeList2;
+package com.rifqit.animeList2.TopAnime;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -15,9 +15,9 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.google.gson.Gson;
-import com.rifqit.animeList2.Database.FavObj;
+import com.rifqit.animeList2.favorite.FavObj;
 import com.rifqit.animeList2.Database.RealmHelper;
-import com.rifqit.animeList2.TopAnime.TopAnimeObj;
+import com.rifqit.animeList2.R;
 import com.squareup.picasso.Picasso;
 
 import io.realm.Realm;

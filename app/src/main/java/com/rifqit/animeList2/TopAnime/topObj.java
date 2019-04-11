@@ -1,4 +1,4 @@
-package com.rifqit.animeList2;
+package com.rifqit.animeList2.TopAnime;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

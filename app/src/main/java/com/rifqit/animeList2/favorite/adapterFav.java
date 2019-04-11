@@ -1,4 +1,4 @@
-package com.rifqit.animeList2.Database;
+package com.rifqit.animeList2.favorite;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -15,7 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
-import com.rifqit.animeList2.DetailFav;
+import com.rifqit.animeList2.Database.RealmHelper;
 import com.rifqit.animeList2.R;
 import com.squareup.picasso.Picasso;
 

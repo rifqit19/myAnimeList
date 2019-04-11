@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailFav"
+    tools:context=".favorite.DetailFav"
     android:orientation="vertical">
 
     <LinearLayout
@@ -163,21 +163,16 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
-                            <!--<Button-->
-                                <!--android:id="@+id/btnFavFav"-->
-                                <!--android:layout_width="wrap_content"-->
-                                <!--android:layout_height="35dp"-->
-                                <!--android:background="@color/oooo"-->
-                                <!--android:text="delete from favorite"-->
-                                <!--android:textColor="#FFF"-->
-                                <!--android:paddingRight="10dp"-->
-                                <!--android:paddingLeft="10dp"-->
-                                <!--android:layout_marginTop="10dp"-->
-                                <!--android:fontFamily="@font/helveticaneue_medium"-->
-                                <!--android:textSize="10sp"/>-->
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_web_orange"
+                                android:layout_alignParentBottom="true"
+                                android:id="@+id/imgw"/>
 
                             <TextView
                                 android:id="@+id/webFav"
+                                android:layout_toRightOf="@id/imgw"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="go to Web >>"

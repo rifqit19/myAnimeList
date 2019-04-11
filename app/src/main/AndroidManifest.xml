@@ -19,10 +19,10 @@
         <activity android:name="com.rifqit.animeList2.search.DetailSearchAnime" />
         <activity android:name="com.rifqit.animeList2.search.SearchAct" />
         <activity android:name="com.rifqit.animeList2.season.detailSeason" />
-        <activity android:name="com.rifqit.animeList2.topMangaDetail" />
-        <activity android:name="com.rifqit.animeList2.topAnimeDetail" />
-        <activity android:name="com.rifqit.animeList2.DetailFav" />
-        <activity android:name="com.rifqit.animeList2.Favorite" />
+        <activity android:name="com.rifqit.animeList2.TopManga.topMangaDetail" />
+        <activity android:name="com.rifqit.animeList2.TopAnime.topAnimeDetail" />
+        <activity android:name="com.rifqit.animeList2.favorite.DetailFav" />
+        <activity android:name="com.rifqit.animeList2.favorite.Favorite" />
         <activity android:name="com.rifqit.animeList2.TopManga.OneShots" />
         <activity android:name="com.rifqit.animeList2.TopManga.Menhua" />
         <activity android:name="com.rifqit.animeList2.TopManga.Menhwa" />
@@ -36,7 +36,7 @@
         <activity android:name="com.rifqit.animeList2.TopAnime.Airing" />
         <activity android:name="com.rifqit.animeList2.season.more" />
         <activity android:name="com.rifqit.animeList2.season.detailMore" />
-        <activity android:name="com.rifqit.animeList2.season.Splashscreen" />
+        <activity android:name="com.rifqit.animeList2.Splashscreen" />
         <activity android:name="com.rifqit.animeList2.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

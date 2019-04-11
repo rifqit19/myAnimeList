@@ -1,4 +1,4 @@
-package com.rifqit.animeList2;
+package com.rifqit.animeList2.Database;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;

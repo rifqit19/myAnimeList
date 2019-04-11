@@ -1,5 +1,7 @@
 package com.rifqit.animeList2.Database;
 
+import com.rifqit.animeList2.favorite.FavObj;
+
 import java.util.List;
 
 import io.realm.Realm;
@@ -44,6 +46,16 @@ public class RealmHelper {
             @Override
             public void execute(Realm realm) {
                 model.deleteFromRealm(0);
+            }
+        });
+    }
+    public void deleteAll(){
+        final RealmResults<FavObj> model = realm.where(FavObj.class).findAll();
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                model.deleteAllFromRealm();
+
             }
         });
     }

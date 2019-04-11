@@ -193,19 +193,34 @@
 
 
 
-
-                            <TextView
-                                android:id="@+id/webMa"
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="go to Web >>"
-                                android:layout_marginTop="10dp"
-                                android:fontFamily="@font/helveticaneue_medium"
-                                android:textColor="@color/oooo"
-                                android:textSize="16sp"
-                                android:gravity="bottom"
                                 android:layout_alignParentBottom="true"
-                                />
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_web_orange"
+                                    android:layout_alignParentBottom="true"
+                                    android:id="@+id/imgw3"/>
+
+                                <TextView
+                                    android:id="@+id/webMa"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="go to Web >>"
+                                    android:fontFamily="@font/helveticaneue_medium"
+                                    android:textColor="@color/oooo"
+                                    android:textSize="16sp"
+                                    android:gravity="bottom"
+                                    android:layout_alignParentBottom="true"
+                                    />
+
+                            </LinearLayout>
+
+
                         </RelativeLayout>
 
 
