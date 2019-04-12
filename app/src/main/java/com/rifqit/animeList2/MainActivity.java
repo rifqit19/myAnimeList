@@ -342,7 +342,7 @@ public class MainActivity extends AppCompatActivity{
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 2 && resultCode ==RESULT_OK) {
-
+            adapterSeason.notifyDataSetChanged();
 //            String tahunkuu = tahun.getSelectedItem().toString();
 //            String musimkuu = musim.getSelectedItem().toString();
 //
@@ -372,10 +372,7 @@ public class MainActivity extends AppCompatActivity{
 //            }else {
 //                getSeason(tahunkuu,musimkuu);
 //            }
-            adapterSeason.notifyDataSetChanged();
 
-        }else {
-            Toast.makeText(MainActivity.this,"gagal",Toast.LENGTH_SHORT).show();
         }
     }
     @Override

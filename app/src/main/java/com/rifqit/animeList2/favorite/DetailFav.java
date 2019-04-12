@@ -134,8 +134,5 @@ public class DetailFav extends AppCompatActivity {
             }
         });
 
-
-
-
     }
 }

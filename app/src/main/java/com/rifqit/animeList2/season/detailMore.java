@@ -11,12 +11,13 @@ import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.google.gson.Gson;
-import com.rifqit.animeList2.favorite.FavObj;
 import com.rifqit.animeList2.Database.RealmHelper;
 import com.rifqit.animeList2.R;
+import com.rifqit.animeList2.favorite.FavObj;
 import com.squareup.picasso.Picasso;
 
 import io.realm.Realm;
@@ -128,7 +129,7 @@ public class detailMore extends AppCompatActivity {
                     realmHelper = new RealmHelper(realm);
                     realmHelper.save(favObj);
 
-//                    Toast.makeText(detailMore.this, "Disimpan ke Favorite!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(detailMore.this, "Disimpan ke Favorite!", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     toggleButton.setBackgroundResource(R.drawable.ic_fav);
@@ -136,12 +137,16 @@ public class detailMore extends AppCompatActivity {
                     realmHelper = new RealmHelper(realm);
                     realmHelper.delete(malId);
                     Log.e("iddd",malId.toString());
-//                    Toast.makeText(detailMore.this,"Item dihapus",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(detailMore.this,"Item dihapus",Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
-
+    }
+    @Override
+    public void onBackPressed() {
+        Intent BackIntent = new Intent();
+        setResult(RESULT_OK,BackIntent);
+        finish();
     }
 
 

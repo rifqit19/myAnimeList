@@ -46,6 +46,7 @@ public class Favorite extends AppCompatActivity {
             }
         });
 
+
         deleteAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,7 +63,8 @@ public class Favorite extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 realmHelper.deleteAll();
-                                finish();
+                                Toast.makeText(Favorite.this,"Semua item favorit dihapus..",Toast.LENGTH_SHORT).show();
+                                adapterFav.notifyDataSetChanged();
                             }
                         }).show();
 
@@ -70,7 +72,7 @@ public class Favorite extends AppCompatActivity {
         });
 
         recyclerView = findViewById(R.id.recyclerFav);
-        GridLayoutManager mGridLayoutManager = new GridLayoutManager(Favorite.this, 3,GridLayoutManager.VERTICAL,false);
+        GridLayoutManager mGridLayoutManager = new GridLayoutManager(Favorite.this, 3,GridLayoutManager.VERTICAL,true);
         recyclerView.setLayoutManager(mGridLayoutManager);
 
         RealmConfiguration configuration = new RealmConfiguration.Builder().build();
@@ -99,10 +101,18 @@ public class Favorite extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 2) {
-            show();
+//            show();
+            adapterFav.notifyDataSetChanged();
         }else {
             Toast.makeText(Favorite.this,"gagal",Toast.LENGTH_SHORT).show();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent BackIntent = new Intent();
+        setResult(RESULT_OK,BackIntent);
+        finish();
     }
 }
 

@@ -140,6 +140,11 @@ public class detailSeason extends AppCompatActivity {
                 }
             }
         });
-
+    }
+    @Override
+    public void onBackPressed() {
+        Intent BackIntent = new Intent();
+        setResult(RESULT_OK,BackIntent);
+        finish();
     }
 }

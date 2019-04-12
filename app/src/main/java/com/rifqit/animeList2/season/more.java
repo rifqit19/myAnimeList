@@ -65,9 +65,7 @@ public class more extends AppCompatActivity {
         back3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                onBackPressed();
                 Intent BackIntent = new Intent();
-//                BackIntent.putExtra("idm",mal_id);
                 setResult(RESULT_OK,BackIntent);
                 finish();
             }
@@ -241,5 +239,11 @@ public class more extends AppCompatActivity {
             adapterMore.notifyDataSetChanged();
 
         }
+    }
+    @Override
+    public void onBackPressed() {
+        Intent BackIntent = new Intent();
+        setResult(RESULT_OK,BackIntent);
+        finish();
     }
 }
