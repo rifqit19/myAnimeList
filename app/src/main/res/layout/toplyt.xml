@@ -1,87 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:id="@+id/topAnimLyt"
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout android:id="@+id/topAnimLyt"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
     android:layout_marginTop="10dp"
-    android:background="@drawable/back_spin">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
-        android:layout_width="40dp"
-        android:layout_height="120dp"
-        android:background="@drawable/backorgs"
-        android:padding="10dp">
-
-        <TextView
-            android:id="@+id/rank"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fontFamily="@font/helveticaneue_medium"
-            android:textSize="16sp"
-            android:text="00"
-            android:textAlignment="center"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_vertical"
-            android:textColor="@color/white"/>
-
-    </LinearLayout>
-
-    <ImageView
-        android:id="@+id/imgRank"
-        android:layout_width="100dp"
-        android:layout_marginTop="1pt"
-        android:layout_marginBottom="1pt"
-        android:layout_height="match_parent"
-        android:scaleType="fitXY"/>
-
-    <LinearLayout
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="10dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/tittlrTop"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/helveticaneue_medium"
-            android:textColor="#000"
-            android:textSize="16dp"
-            android:layout_marginTop="10dp"
-            />
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:cardCornerRadius="@dimen/mar10">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="vertical"
-            android:background="@drawable/back_spin">
+            android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/backorgt"
-                android:text="SCORE"
-                android:fontFamily="@font/helveticaneue_medium"
-                android:textSize="14sp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:textColor="@color/white"/>
+            <LinearLayout
+                android:layout_width="40dp"
+                android:layout_height="120dp"
+                android:background="@drawable/backorgs"
+                android:padding="10dp">
 
-            <TextView
-                android:id="@+id/score"
+                <TextView
+                    android:id="@+id/rank"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/helveticaneue_medium"
+                    android:textSize="16sp"
+                    android:text="00"
+                    android:textAlignment="center"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/white"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imgRank"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"/>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:fontFamily="@font/helveticaneue_medium"
-                android:textSize="18sp"
-                android:textColor="#000"/>
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tittlrTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/helveticaneue_medium"
+                    android:textColor="#000"
+                    android:textSize="16dp"
+                    android:layout_marginTop="10dp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/back_spin">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/backorgt"
+                        android:text="SCORE"
+                        android:fontFamily="@font/helveticaneue_medium"
+                        android:textSize="14sp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:textColor="@color/white"/>
+s
+                    <TextView
+                        android:id="@+id/score"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/helveticaneue_medium"
+                        android:textSize="18sp"
+                        android:textColor="#000"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
 
         </LinearLayout>
 
-    </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
 
 </LinearLayout>

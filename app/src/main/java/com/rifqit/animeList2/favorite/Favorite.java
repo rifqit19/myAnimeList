@@ -105,3 +105,4 @@ public class Favorite extends AppCompatActivity {
         }
     }
 }
+

@@ -74,8 +74,6 @@ public class detailMore extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                onBackPressed();
-                Intent BackIntent = new Intent();
-                setResult(RESULT_OK,BackIntent);
                 finish();
             }
         });
@@ -112,6 +110,8 @@ public class detailMore extends AppCompatActivity {
         toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                setResult(RESULT_OK);
                 if (isChecked) {
                     toggleButton.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_redfav));
 

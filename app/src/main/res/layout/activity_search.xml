@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".search.SearchAct"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#EEE">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -53,79 +54,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="10"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/ic_arrow"
-                    android:layout_alignParentRight="true"/>
-
-                <Spinner
-                    android:id="@+id/spinnerType"
-                    android:layout_width="match_parent"
-                    android:layout_height="35dp"
-                    android:spinnerMode="dropdown"
-                    />
-
-            </RelativeLayout>
-
-            <!--<LinearLayout-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_weight="8"-->
-            <!--android:background="@drawable/back_spin"-->
-            <!--android:weightSum="10">-->
-
-            <!--<Spinner-->
-            <!--android:id="@+id/spinnerType"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="35dp"-->
-            <!--android:spinnerMode="dropdown"-->
-            <!--android:layout_weight="10"-->
-            <!--/>-->
-
-            <!--</LinearLayout>-->
-
-            <!--<LinearLayout-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_weight="2"-->
-            <!--android:background="@drawable/back_spin"-->
-            <!--android:layout_marginLeft="10dp"-->
-            <!--android:weightSum="10"-->
-            <!--&gt;-->
-            <!--<Spinner-->
-            <!--android:id="@+id/spinnerPage"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="35dp"-->
-            <!--android:spinnerMode="dropdown"-->
-            <!--android:layout_weight="10"-->
-            <!--&gt;-->
-            <!--</Spinner>-->
-
-            <!--</LinearLayout>-->
-            <!--<ImageButton-->
-            <!--android:id="@+id/Refreshsearch"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:src="@drawable/ic_refresh_orange"-->
-            <!--android:layout_weight="0.5"-->
-            <!--android:background="@android:color/transparent"/>-->
-        </LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -134,8 +63,11 @@
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recyclerSearch"
                 android:layout_width="match_parent"
+                android:paddingTop="50dp"
+                android:clipToPadding="false"
                 android:layout_height="wrap_content"
-                android:layout_above="@id/progress_bar1">
+                android:layout_above="@id/progress_bar1"
+                >
             </android.support.v7.widget.RecyclerView>
 
             <ProgressBar
@@ -145,6 +77,46 @@
                 android:layout_centerHorizontal="true"
                 android:layout_alignParentBottom="true"
                 />
+
+            <LinearLayout
+                android:id="@+id/klklklklklkl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:padding="@dimen/mar10"
+                android:weightSum="10"
+                android:layout_alignParentTop="true">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    app:cardCornerRadius="@dimen/mar10">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/mar5"
+                            android:src="@drawable/ic_arrow" />
+
+                        <Spinner
+                            android:id="@+id/spinnerType"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:spinnerMode="dropdown" />
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
 
         </RelativeLayout>
 

@@ -118,7 +118,6 @@ public class MainActivity extends AppCompatActivity{
                 else {
                     sideT.setBackgroundResource(R.drawable.ic_side);
                     topA.setVisibility(View.GONE);
-
                 }
             }
         });
@@ -137,7 +136,6 @@ public class MainActivity extends AppCompatActivity{
                 }
             }
         });
-
 
         airing.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -343,37 +341,38 @@ public class MainActivity extends AppCompatActivity{
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == 2) {
+        if (requestCode == 2 && resultCode ==RESULT_OK) {
 
-            String tahunkuu = tahun.getSelectedItem().toString();
-            String musimkuu = musim.getSelectedItem().toString();
-
-            Calendar date = Calendar.getInstance();
-            final Integer yearC1 = date.get(Calendar.YEAR);
-            Integer month1C = date.get(Calendar.MONTH);
-
-            if (month1C.equals(1)||month1C.equals(2)||month1C.equals(3)){
-                mn1 = "winter";
-            }else if (month1C.equals(4)||month1C.equals(5)||month1C.equals(6)){
-                mn1 = "spring";
-            }else if (month1C.equals(7)||month1C.equals(8)||month1C.equals(9)){
-                mn1 = "summer";
-            }else if (month1C.equals(10)||month1C.equals(11)||month1C.equals(12)){
-                mn1 = "fall";
-            }
-
-            String yr1 = yearC1.toString();
-
-            Log.e("rrr",yr1);
-            Log.e("rrr",mn1);
-            Log.e("rrr",tahunkuu);
-            Log.e("rrr",musimkuu);
-
-            if (tahunkuu.equals("tahun")||musimkuu.equals("musim")){
-                getSeason(yr1,mn1);
-            }else {
-                getSeason(tahunkuu,musimkuu);
-            }
+//            String tahunkuu = tahun.getSelectedItem().toString();
+//            String musimkuu = musim.getSelectedItem().toString();
+//
+//            Calendar date = Calendar.getInstance();
+//            final Integer yearC1 = date.get(Calendar.YEAR);
+//            Integer month1C = date.get(Calendar.MONTH);
+//
+//            if (month1C.equals(1)||month1C.equals(2)||month1C.equals(3)){
+//                mn1 = "winter";
+//            }else if (month1C.equals(4)||month1C.equals(5)||month1C.equals(6)){
+//                mn1 = "spring";
+//            }else if (month1C.equals(7)||month1C.equals(8)||month1C.equals(9)){
+//                mn1 = "summer";
+//            }else if (month1C.equals(10)||month1C.equals(11)||month1C.equals(12)){
+//                mn1 = "fall";
+//            }
+//
+//            String yr1 = yearC1.toString();
+//
+//            Log.e("rrr",yr1);
+//            Log.e("rrr",mn1);
+//            Log.e("rrr",tahunkuu);
+//            Log.e("rrr",musimkuu);
+//
+//            if (tahunkuu.equals("tahun")||musimkuu.equals("musim")){
+//                getSeason(yr1,mn1);
+//            }else {
+//                getSeason(tahunkuu,musimkuu);
+//            }
+            adapterSeason.notifyDataSetChanged();
 
         }else {
             Toast.makeText(MainActivity.this,"gagal",Toast.LENGTH_SHORT).show();
@@ -420,7 +419,6 @@ public class MainActivity extends AppCompatActivity{
         int id = item.getItemId();
         if (id == R.id.favorite){
             Intent l = new Intent(MainActivity.this, Favorite.class);
-//            startActivity(l);
             mainActivity.startActivityForResult(l,2);
             return true;
         }

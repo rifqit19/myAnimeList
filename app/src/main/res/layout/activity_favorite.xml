@@ -49,7 +49,6 @@
                     android:layout_alignParentEnd="true"
                     android:background="@android:color/transparent"/>
 
-
             </RelativeLayout>
 
         </android.support.v7.widget.Toolbar>

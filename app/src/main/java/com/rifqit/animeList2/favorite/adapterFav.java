@@ -73,6 +73,7 @@ public class adapterFav extends RecyclerView.Adapter<adapterFav.MyViewHolder> {
     public void onBindViewHolder(final adapterFav.MyViewHolder holder, final int position) {
         final FavObj model = favObjs.get(position);
         holder.nama.setText(model.getTitle());
+        holder.eps.setText(model.getEpisode());
         Picasso.with(context).load(model.getImageUrl()).placeholder(R.drawable.ic_placeholder).into(holder.cover);
         holder.typ.setText(model.getType());
         holder.cover.setOnClickListener(new View.OnClickListener() {

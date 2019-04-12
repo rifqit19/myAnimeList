@@ -237,36 +237,9 @@ public class more extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == 2) {
+        if (requestCode == 2 && resultCode ==RESULT_OK) {
+            adapterMore.notifyDataSetChanged();
 
-            Calendar date = Calendar.getInstance();
-            Integer yearC11 = date.get(Calendar.YEAR);
-            Integer monthC11 = date.get(Calendar.MONTH);
-
-            Bundle bbb = getIntent().getExtras();
-
-            String th11 = bbb.getString("thth");
-            String ms11 = bbb.getString("msms");
-
-            if (th11.equals("tahun") || ms11.equals("musim")) {
-                yy = yearC11.toString();
-                if (monthC11.equals(1) || monthC11.equals(2) || monthC11.equals(3)) {
-                    mn1 = "winter";
-                } else if (monthC11.equals(4) || monthC11.equals(5) || monthC11.equals(6)) {
-                    mn1 = "spring";
-                } else if (monthC11.equals(7) || monthC11.equals(8) || monthC11.equals(9)) {
-                    mn1 = "summer";
-                } else if (monthC11.equals(10) || monthC11.equals(11) || monthC11.equals(12)) {
-                    mn1 = "fall";
-                }
-            } else {
-                mn1 = ms11;
-                yy = th11;
-            }
-            getSeason(yy,mn1);
-
-        } else {
-            Toast.makeText(more.this, "gagal", Toast.LENGTH_SHORT).show();
         }
     }
 }
