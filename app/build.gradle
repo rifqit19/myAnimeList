@@ -39,4 +39,5 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
     implementation 'com.jakewharton.picasso:picasso2-okhttp3-downloader:1.1.0'
 //    implementation 'com.github.pwittchen:infinitescroll:0.0.2'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
 }

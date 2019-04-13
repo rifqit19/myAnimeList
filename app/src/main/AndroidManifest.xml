@@ -36,8 +36,8 @@
         <activity android:name="com.rifqit.animeList2.TopAnime.Airing" />
         <activity android:name="com.rifqit.animeList2.season.more" />
         <activity android:name="com.rifqit.animeList2.season.detailMore" />
-        <activity android:name="com.rifqit.animeList2.Splashscreen" />
-        <activity android:name="com.rifqit.animeList2.MainActivity">
+        <activity android:name="com.rifqit.animeList2.MainActivity" />
+        <activity android:name="com.rifqit.animeList2.Splashscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
