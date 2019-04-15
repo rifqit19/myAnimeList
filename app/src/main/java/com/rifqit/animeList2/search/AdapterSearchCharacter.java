@@ -2,15 +2,15 @@ package com.rifqit.animeList2.search;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
+import com.makeramen.roundedimageview.RoundedImageView;
 import com.rifqit.animeList2.R;
 import com.squareup.picasso.Picasso;
 
@@ -30,8 +30,8 @@ public class AdapterSearchCharacter extends RecyclerView.Adapter<AdapterSearchCh
         public final View mView;
 
         TextView tittle;
-        ImageView img;
-        LinearLayout lklk;
+        RoundedImageView img;
+        CardView lklk;
 
 
         CustomViewHolder(View itemView){

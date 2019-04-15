@@ -72,7 +72,7 @@ public class Favorite extends AppCompatActivity {
         });
 
         recyclerView = findViewById(R.id.recyclerFav);
-        GridLayoutManager mGridLayoutManager = new GridLayoutManager(Favorite.this, 3,GridLayoutManager.VERTICAL,true);
+        GridLayoutManager mGridLayoutManager = new GridLayoutManager(Favorite.this, 3,GridLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(mGridLayoutManager);
 
         RealmConfiguration configuration = new RealmConfiguration.Builder().build();
