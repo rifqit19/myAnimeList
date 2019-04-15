@@ -21,7 +21,6 @@ public class AdapterSearchCharacter extends RecyclerView.Adapter<AdapterSearchCh
     private ArrayList<seachObjCharacter> seachObjCharacters;
     private Context context;
 
-
     public AdapterSearchCharacter(Context context, ArrayList<seachObjCharacter> datalist){
         this.context = context;
         this.seachObjCharacters = datalist;

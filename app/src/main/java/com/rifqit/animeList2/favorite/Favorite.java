@@ -50,24 +50,27 @@ public class Favorite extends AppCompatActivity {
         deleteAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 new AlertDialog.Builder(Favorite.this)
-                        .setTitle("Hapus Semua")
-                        .setMessage(getString(R.string.apakah_kamu_yakinn_akan_mnghapus_semua_item_faforit_kamu))
-                        .setNegativeButton("Batal", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.cancel();
-                            }
-                        })
-                        .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                realmHelper.deleteAll();
-                                Toast.makeText(Favorite.this,"Semua item favorit dihapus..",Toast.LENGTH_SHORT).show();
-                                adapterFav.notifyDataSetChanged();
-                            }
-                        }).show();
-
+                 if (favObjs.isEmpty()){
+                     Toast.makeText(Favorite.this,"favorite kosong",Toast.LENGTH_SHORT).show();
+                 }else {
+                     new AlertDialog.Builder(Favorite.this)
+                             .setTitle("Hapus Semua")
+                             .setMessage(getString(R.string.apakah_kamu_yakinn_akan_mnghapus_semua_item_faforit_kamu))
+                             .setNegativeButton("Batal", new DialogInterface.OnClickListener() {
+                                 @Override
+                                 public void onClick(DialogInterface dialog, int which) {
+                                     dialog.cancel();
+                                 }
+                             })
+                             .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+                                 @Override
+                                 public void onClick(DialogInterface dialog, int which) {
+                                     realmHelper.deleteAll();
+                                     Toast.makeText(Favorite.this,"Semua item favorit dihapus..",Toast.LENGTH_SHORT).show();
+                                     adapterFav.notifyDataSetChanged();
+                                 }
+                             }).show();
+                 }
             }
         });
 
