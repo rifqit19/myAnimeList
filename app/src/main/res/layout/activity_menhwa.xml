@@ -11,11 +11,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/oooo">
+        android:background="@color/orange">
 
         <android.support.v7.widget.Toolbar
             android:layout_width="match_parent"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/margin_medium"
             android:layout_height="?attr/actionBarSize"
             app:contentInsetStart="0dp">
 
@@ -28,7 +28,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:src="@drawable/ic_back_white"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="@dimen/margin_small"
                     android:background="@android:color/transparent"/>
 
                 <TextView
@@ -40,7 +40,7 @@
                     android:layout_centerHorizontal="true"
                     android:textColor="#FFFF"
                     android:fontFamily="@font/chlorinr"
-                    android:textSize="18sp"/>
+                    android:textSize="@dimen/title_small_size"/>
 
             </RelativeLayout>
 
@@ -52,7 +52,7 @@
         android:id="@+id/recyclerMenhwa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/mar10"
+        android:paddingBottom="@dimen/margin_small"
         android:clipToPadding="false"
         >
 

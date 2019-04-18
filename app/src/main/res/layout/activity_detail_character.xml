@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/oooo">
+        android:background="@color/orange">
 
         <android.support.v7.widget.Toolbar
             android:layout_width="match_parent"
@@ -25,7 +25,7 @@
 
                 <ImageButton
                     android:id="@+id/back2Ch"
-                    android:layout_width="wrap_content"
+                    android:layout_width="@dimen/medium_action_icon"
                     android:layout_height="match_parent"
                     android:src="@drawable/ic_back_white"
                     android:layout_marginLeft="10dp"
@@ -35,16 +35,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
-                    android:text="Detail"
+                    android:text="@string/tittle_detail_xhar"
                     android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true"
                     android:textColor="#FFFF"
                     android:fontFamily="@font/chlorinr"
-                    android:textSize="18sp"/>
+                    android:textSize="@dimen/title_small_size"/>
 
                 <ToggleButton
                     android:id="@+id/toggleCh"
-                    android:layout_width="30dp"
+                    android:layout_width="@dimen/medium_action_icon"
                     android:layout_height="30dp"
                     android:layout_marginRight="10dp"
                     android:layout_alignParentRight="true"
@@ -76,17 +76,17 @@
             android:padding="10dp"
             android:fontFamily="@font/helveticaneue_medium"
             android:textColor="#000"
-            android:textSize="16sp"/>
+            android:textSize="@dimen/text_big_size"/>
 
         <TextView
             android:id="@+id/webCh"
             android:layout_width="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_height="wrap_content"
-            android:text="go to Web >>"
+            android:text="@string/go_web_char"
             android:fontFamily="@font/helveticaneue_medium"
-            android:textColor="@color/oooo"
-            android:textSize="16sp"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/text_big_size"
             android:gravity="bottom"
             />
 

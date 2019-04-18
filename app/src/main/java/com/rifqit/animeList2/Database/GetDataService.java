@@ -27,4 +27,9 @@ public interface GetDataService {
             @Query("q") String q,
             @Query("page") Integer page
     );
+    @GET("schedule/{day}")
+    Call<ResponseBody>getSchedule(
+            @Path("day") String day
+    );
+
 }

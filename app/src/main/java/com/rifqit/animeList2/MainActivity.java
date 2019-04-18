@@ -28,9 +28,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import com.daimajia.slider.library.Animations.DescriptionAnimation;
+import com.daimajia.slider.library.SliderLayout;
+import com.daimajia.slider.library.SliderTypes.BaseSliderView;
+import com.daimajia.slider.library.SliderTypes.TextSliderView;
+import com.daimajia.slider.library.Tricks.ViewPagerEx;
+import com.google.gson.Gson;
 import com.rifqit.animeList2.Database.GetDataService;
 import com.rifqit.animeList2.Database.RetrofitCilentInstance;
-import com.rifqit.animeList2.favorite.Favorite;
 import com.rifqit.animeList2.TopAnime.Airing;
 import com.rifqit.animeList2.TopAnime.Ova;
 import com.rifqit.animeList2.TopAnime.Special;
@@ -41,6 +46,7 @@ import com.rifqit.animeList2.TopManga.Menhua;
 import com.rifqit.animeList2.TopManga.Menhwa;
 import com.rifqit.animeList2.TopManga.Novel;
 import com.rifqit.animeList2.TopManga.OneShots;
+import com.rifqit.animeList2.favorite.Favorite;
 import com.rifqit.animeList2.search.SearchAct;
 import com.rifqit.animeList2.season.adapterSeason;
 import com.rifqit.animeList2.season.seasonObj;
@@ -52,13 +58,15 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity implements BaseSliderView.OnSliderClickListener,
+        ViewPagerEx.OnPageChangeListener {
 
     Spinner musim ,tahun;
 //    String tahunS,musimS;
@@ -68,6 +76,7 @@ public class MainActivity extends AppCompatActivity{
     com.rifqit.animeList2.season.adapterSeason adapterSeason;
     private String TAG = MainActivity.class.getSimpleName();
     private ArrayList<seasonObj> seasonObjs = new ArrayList<>();
+    ArrayList<ScheduleObj> scheduleObjs = new ArrayList<>();
     RecyclerView recyclerView;
     TextView airing,tv,upcoming,special,ova;
     TextView manga,novel,oneShots,doujin,menhwa,menhua;
@@ -77,16 +86,44 @@ public class MainActivity extends AppCompatActivity{
     MainActivity mainActivity = this;
     LinearLayout topA,topM;
     ToggleButton sideT,sideT1;
+    String day;
+    SliderLayout sliderLayout;
+    HashMap<String, String> HashMapForURL ;
+    String dayku;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        sliderLayout = findViewById(R.id.slider);
         android.support.v7.widget.Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarMain);
         setSupportActionBar(toolbar);
         Calendar date = Calendar.getInstance();
         final Integer yearC = date.get(Calendar.YEAR);
         Integer monthC = date.get(Calendar.MONTH);
+        Integer dayy = date.get(Calendar.DAY_OF_WEEK);
+
+        if (dayy.equals(1)){
+            dayku = "sunday";
+        }else if (dayy.equals(2)){
+            dayku = "monday";
+        }else if (dayy.equals(3)){
+            dayku = "tuesday";
+        }else if (dayy.equals(4)){
+            dayku = "wednesday";
+        }else if (dayy.equals(5)){
+            dayku = "thursday";
+        }else if (dayy.equals(6)){
+            dayku = "friday";
+        }else if (dayy.equals(7)){
+            dayku = "saturday";
+        }
+
+        Log.e("dayku", dayku);
+
+        schedule(dayku);
 
         musim = findViewById(R.id.spinnerMusim);
         tahun = findViewById(R.id.spinnerTahun);
@@ -217,8 +254,6 @@ public class MainActivity extends AppCompatActivity{
                 startActivity(a);
             }
         });
-//        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this,R.array.musim, android.R.layout.simple_spinner_item);
-//        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(MainActivity.this, R.layout.custom_spinner) {
             @Override
@@ -242,9 +277,6 @@ public class MainActivity extends AppCompatActivity{
         adapter1.add("winter");
         adapter1.add("fall");
         adapter1.add("musim");
-
-//        ArrayAdapter<CharSequence>adapter2 = ArrayAdapter.createFromResource(this,R.array.tahun, android.R.layout.simple_spinner_item);
-//        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(MainActivity.this, R.layout.custom_spinner) {
             @Override
@@ -273,11 +305,9 @@ public class MainActivity extends AppCompatActivity{
 
         tahun.setAdapter(adapter2);
         tahun.setSelection(adapter2.getCount());
-//        tahun.setOnItemSelectedListener(MainActivity.this);
 
         musim.setAdapter(adapter1);
         musim.setSelection(adapter1.getCount());
-//        musim.setOnItemSelectedListener(MainActivity.this);
 
         progressDoalog = new ProgressDialog(MainActivity.this);
         progressDoalog.setMessage("Loading...");
@@ -343,35 +373,6 @@ public class MainActivity extends AppCompatActivity{
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 2 && resultCode ==RESULT_OK) {
             adapterSeason.notifyDataSetChanged();
-//            String tahunkuu = tahun.getSelectedItem().toString();
-//            String musimkuu = musim.getSelectedItem().toString();
-//
-//            Calendar date = Calendar.getInstance();
-//            final Integer yearC1 = date.get(Calendar.YEAR);
-//            Integer month1C = date.get(Calendar.MONTH);
-//
-//            if (month1C.equals(1)||month1C.equals(2)||month1C.equals(3)){
-//                mn1 = "winter";
-//            }else if (month1C.equals(4)||month1C.equals(5)||month1C.equals(6)){
-//                mn1 = "spring";
-//            }else if (month1C.equals(7)||month1C.equals(8)||month1C.equals(9)){
-//                mn1 = "summer";
-//            }else if (month1C.equals(10)||month1C.equals(11)||month1C.equals(12)){
-//                mn1 = "fall";
-//            }
-//
-//            String yr1 = yearC1.toString();
-//
-//            Log.e("rrr",yr1);
-//            Log.e("rrr",mn1);
-//            Log.e("rrr",tahunkuu);
-//            Log.e("rrr",musimkuu);
-//
-//            if (tahunkuu.equals("tahun")||musimkuu.equals("musim")){
-//                getSeason(yr1,mn1);
-//            }else {
-//                getSeason(tahunkuu,musimkuu);
-//            }
 
         }
     }
@@ -510,12 +511,129 @@ public class MainActivity extends AppCompatActivity{
         recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setAdapter(adapterSeason);
     }
-//    @Override
-//    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//    }
-//
-//    @Override
-//    public void onNothingSelected(AdapterView<?> parent) {
-//    }
+    public void schedule(final String day){
+        GetDataService service = RetrofitCilentInstance.getRetrofitInstance().create(GetDataService.class);
+        Call<ResponseBody> call = service.getSchedule(day);
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                progressDoalog.dismiss();
+                if (response.isSuccessful()) {
+                    try {
+                        String respon = response.body().string();
+                        JSONObject jsonObj = new JSONObject(respon);
+//                        seasonObjs.clear();
+                        JSONArray api = jsonObj.getJSONArray(day);
+                        for (int i = 0; i < 6; i++){
+                            JSONObject c = api.getJSONObject(i);
 
+                            Integer mal_id1 = c.getInt("mal_id");
+                            String url1 = c.getString("url");
+                            String tittle1 = c.getString("title");
+                            String imageUrl1 = c.getString("image_url");
+                            String synopsis1 = c.getString("synopsis");
+                            String type1 = c.getString("type");
+                            String airing_start1 = c.getString("airing_start");
+//                            Integer episodes = c.getInt("episodes");
+                            Integer members1 = c.getInt("members");
+
+                            final ScheduleObj s = new ScheduleObj();
+                            s.setMalId(mal_id1);
+                            s.setUrl(url1);
+                            s.setImageUrl(imageUrl1);
+                            s.setTitle(tittle1);
+                            s.setSynopsis(synopsis1);
+                            s.setType(type1);
+                            s.setAiringStart(airing_start1);
+//                            s.setEpisodes(episodes);
+                            s.setMembers(members1);
+                            scheduleObjs.add(s);
+
+                            HashMapForURL = new HashMap<String, String>();
+                            HashMapForURL.put(tittle1, imageUrl1);
+
+                            for(String name : HashMapForURL.keySet()){
+
+                                TextSliderView textSliderView = new TextSliderView(MainActivity.this);
+
+                                textSliderView
+                                        .description(name)
+                                        .image(HashMapForURL.get(name))
+                                        .setScaleType(BaseSliderView.ScaleType.Fit)
+                                        .setOnSliderClickListener(MainActivity.this);
+
+                                textSliderView.bundle(new Bundle());
+
+                                textSliderView.getBundle().putString("extra",name);
+
+                                sliderLayout.addSlider(textSliderView);
+
+                                textSliderView.setOnSliderClickListener(new BaseSliderView.OnSliderClickListener() {
+                                    @Override
+                                    public void onSliderClick(BaseSliderView slider) {
+                                        Intent intentX = new Intent(MainActivity.this , Detail_slider.class);
+                                        intentX.putExtra("schedule", new Gson().toJson(s));
+                                        startActivity(intentX);
+                                    }
+                                });
+                            }
+
+                            sliderLayout.setPresetTransformer(SliderLayout.Transformer.DepthPage);
+                            sliderLayout.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
+                            sliderLayout.setCustomAnimation(new DescriptionAnimation());
+                            sliderLayout.setDuration(3000);
+                            sliderLayout.addOnPageChangeListener(MainActivity.this);
+                        }
+
+                    } catch (JSONException e) {
+//                        Toast.makeText(MainActivity.this, e.getLocalizedMessage()+111, Toast.LENGTH_SHORT).show();
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    Log.e(TAG, "Souldn't get json from server.1");
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void
+                        run() {
+//                            Toast.makeText(getApplicationContext(), "Couldn't get json from server. Check LoCat for possible errors!1",Toast.LENGTH_LONG).show();
+                        }
+                    });
+                }
+            }
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                progressDoalog.dismiss();
+//                Toast.makeText(MainActivity.this, t.getLocalizedMessage()+11, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    @Override
+    protected void onStop() {
+
+        sliderLayout.stopAutoCycle();
+
+        super.onStop();
+    }
+
+    @Override
+    public void onSliderClick(BaseSliderView slider) {
+//        Toast.makeText(this,slider.getBundle().get("extra") + "",Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+        Log.e("slider demo", "Page Changed: " + position);
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+    }
 }

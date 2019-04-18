@@ -6,10 +6,10 @@
         android:color="@color/white"/>
 
     <stroke
-        android:color="@color/oooo"
+        android:color="@color/orange"
         android:width="1pt"/>
 
     <corners
-        android:bottomRightRadius="@dimen/mar10"/>
+        android:bottomRightRadius="@dimen/margin_small"/>
 
 </shape>

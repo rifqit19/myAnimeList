@@ -21,14 +21,14 @@
 
     <TextView
         android:id="@+id/namaAnimeSeason"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginLeft="5dp"
+        android:layout_marginTop="@dimen/margin_mid_extra_small"
+        android:layout_marginRight="@dimen/margin_mid_extra_small"
+        android:layout_marginLeft="@dimen/margin_mid_extra_small"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/helveticaneue_medium"
         android:textColor="@color/white"
-        android:textSize="12sp"
+        android:textSize="@dimen/text_small_size"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"/>
 
@@ -37,14 +37,14 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="10"
-        android:layout_marginBottom="5dp">
+        android:layout_marginBottom="@dimen/margin_mid_extra_small">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="9.5"
             android:orientation="vertical"
-            android:layout_marginLeft="5dp">
+            android:layout_marginLeft="@dimen/margin_mid_extra_small">
 
             <TextView
                 android:id="@+id/typeLyt"
@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/helveticaneue_medium"
                 android:textColor="@color/white"
-                android:textSize="10dp"/>
+                android:textSize="@dimen/margin_small"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -65,7 +65,7 @@
                     android:text="episode : "
                     android:fontFamily="@font/helveticaneue_medium"
                     android:textColor="@color/white"
-                    android:textSize="10dp"/>
+                    android:textSize="@dimen/margin_small"/>
 
                 <TextView
                     android:id="@+id/episodeLyt"
@@ -73,7 +73,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/helveticaneue_medium"
                     android:textColor="@color/white"
-                    android:textSize="10dp"/>
+                    android:textSize="@dimen/margin_small"/>
 
 
             </LinearLayout>
@@ -84,13 +84,13 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.5"
-            android:layout_marginRight="5dp">
+            android:layout_marginRight="@dimen/margin_mid_extra_small">
 
             <ToggleButton
                 android:id="@+id/toggleLyt"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginRight="@dimen/margin_mid_extra_small"
                 android:layout_gravity="center_vertical"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"

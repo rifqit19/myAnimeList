@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">myAnimeList</string>
     <string name="apakah_kamu_yakinn_akan_mnghapus_semua_item_faforit_kamu">apakah kamu yakin\nakan menghapus semua favorit kamu?</string>
+    <string name="tittle_top_airing">Top Airing</string>
+    <string name="tittle_detail_xhar">Detail</string>
+    <string name="go_web_char"><![CDATA[go to Web >>]]></string>
+    <string name="tittle_detail_fav">Detail</string>
 
     <string-array name="musim">
 

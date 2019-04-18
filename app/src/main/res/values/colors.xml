@@ -5,7 +5,7 @@
     <color name="colorAccent">#D81B60</color>
 
     <color name="white">#FFFF</color>
-    <color name="oooo">#FF9003</color>
+    <color name="orange">#FF9003</color>
     <color name="whiteTransparent">#B7FFFFFF</color>
     <color name="blahkTrans">#B0000000</color>
 </resources>

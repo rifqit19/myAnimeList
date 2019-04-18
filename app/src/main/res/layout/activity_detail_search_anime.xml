@@ -10,12 +10,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/oooo">
+        android:background="@color/orange">
 
         <android.support.v7.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/margin_medium"
             app:contentInsetStart="0dp">
 
             <RelativeLayout
@@ -25,10 +25,10 @@
 
                 <ImageButton
                     android:id="@+id/back2Sa"
-                    android:layout_width="wrap_content"
+                    android:layout_width="@dimen/medium_action_icon"
                     android:layout_height="match_parent"
                     android:src="@drawable/ic_back_white"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="@dimen/margin_small"
                     android:background="@android:color/transparent"/>
 
                 <TextView
@@ -40,13 +40,13 @@
                     android:layout_centerHorizontal="true"
                     android:textColor="#FFFF"
                     android:fontFamily="@font/chlorinr"
-                    android:textSize="18sp"/>
+                    android:textSize="@dimen/title_small_size"/>
 
                 <ToggleButton
                     android:id="@+id/toggleSa"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_width="@dimen/medium_action_icon"
+                    android:layout_height="@dimen/medium_action_icon"
+                    android:layout_marginRight="@dimen/margin_small"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:background="@drawable/ic_fav"
@@ -72,10 +72,10 @@
                 android:layout_gravity="center_horizontal"
                 android:textColor="#000"
                 android:fontFamily="@font/helvetica_neu_bold"
-                android:layout_marginRight="15dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="10dp"
-                android:textSize="16sp"/>
+                android:layout_marginRight="@dimen/margin_mid"
+                android:layout_marginLeft="@dimen/margin_mid"
+                android:layout_marginTop="@dimen/margin_small"
+                android:textSize="@dimen/text_big_size"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -98,9 +98,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginRight="15dp"
-                        android:layout_marginBottom="15dp">
+                        android:layout_marginTop="@dimen/margin_mid"
+                        android:layout_marginRight="@dimen/margin_mid"
+                        android:layout_marginBottom="@dimen/margin_mid">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -108,8 +108,8 @@
                             android:text="type"
                             android:layout_marginTop="10dp"
                             android:fontFamily="@font/helveticaneue_medium"
-                            android:textSize="12sp"
-                            android:textColor="@color/oooo"/>
+                            android:textSize="@dimen/text_small_size"
+                            android:textColor="@color/orange"/>
 
                         <TextView
                             android:id="@+id/typeSa"
@@ -118,17 +118,17 @@
                             android:text="TV"
                             android:fontFamily="@font/helveticaneue_medium"
                             android:textColor="#000"
-                            android:textSize="16sp"
+                            android:textSize="@dimen/text_big_size"
                             />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="episodes"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="@dimen/margin_small"
                             android:fontFamily="@font/helveticaneue_medium"
-                            android:textSize="12sp"
-                            android:textColor="@color/oooo"/>
+                            android:textSize="@dimen/text_small_size"
+                            android:textColor="@color/orange"/>
 
                         <TextView
                             android:id="@+id/episodesSa"
@@ -137,17 +137,17 @@
                             android:text="unknown"
                             android:fontFamily="@font/helveticaneue_medium"
                             android:textColor="#000"
-                            android:textSize="16sp"
+                            android:textSize="@dimen/text_big_size"
                             />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="members"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="@dimen/margin_small"
                             android:fontFamily="@font/helveticaneue_medium"
-                            android:textSize="12sp"
-                            android:textColor="@color/oooo"/>
+                            android:textSize="@dimen/text_small_size"
+                            android:textColor="@color/orange"/>
 
                         <TextView
                             android:id="@+id/membersSa"
@@ -156,7 +156,7 @@
                             android:text="234343"
                             android:fontFamily="@font/helveticaneue_medium"
                             android:textColor="#000"
-                            android:textSize="16sp"
+                            android:textSize="@dimen/text_big_size"
                             />
 
                         <RelativeLayout
@@ -172,12 +172,12 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:background="@color/oooo"
+                                    android:background="@color/orange"
                                     android:text="SCORE"
                                     android:fontFamily="@font/helveticaneue_medium"
                                     android:textSize="14sp"
-                                    android:paddingLeft="10dp"
-                                    android:paddingRight="10dp"
+                                    android:paddingLeft="@dimen/margin_small"
+                                    android:paddingRight="@dimen/margin_small"
                                     android:textColor="@color/white"/>
 
                                 <TextView
@@ -191,33 +191,26 @@
 
                             </LinearLayout>
 
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_web_orange"
+                                android:layout_alignParentBottom="true"
+                                android:id="@+id/imgw"/>
 
-                            <LinearLayout
+                            <TextView
+                                android:id="@+id/webSa"
+                                android:layout_toRightOf="@id/imgw"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:text="go to Web >>"
+                                android:layout_marginTop="@dimen/margin_small"
+                                android:fontFamily="@font/helveticaneue_medium"
+                                android:textColor="@color/orange"
+                                android:textSize="@dimen/text_big_size"
+                                android:gravity="bottom"
                                 android:layout_alignParentBottom="true"
-                                android:orientation="horizontal">
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:src="@drawable/ic_web_orange"
-                                    android:layout_alignParentBottom="true"
-                                    android:id="@+id/imgw2"/>
-
-                                <TextView
-                                    android:id="@+id/webSa"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="go to Web >>"
-                                    android:fontFamily="@font/helveticaneue_medium"
-                                    android:textColor="@color/oooo"
-                                    android:textSize="16sp"
-                                    android:gravity="bottom"
-                                    android:layout_alignParentBottom="true"
-                                    />
-
-                            </LinearLayout>
+                                />
 
 
                         </RelativeLayout>
@@ -231,8 +224,8 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="@dimen/margin_mid"
+                    android:layout_marginLeft="@dimen/margin_mid"
                     android:background="@drawable/backorg">
                     <TextView
                         android:layout_width="wrap_content"
@@ -240,8 +233,8 @@
                         android:text="Synopsis"
                         android:layout_centerVertical="true"
                         android:layout_centerHorizontal="true"
-                        android:textSize="14sp"
-                        android:layout_margin="5dp"
+                        android:textSize="@dimen/text_medium_size"
+                        android:layout_margin="@dimen/margin_mid_extra_small"
                         android:fontFamily="@font/helvetica_neu_bold"
                         android:textColor="#FFFF"/>
                 </RelativeLayout>
@@ -250,12 +243,12 @@
                     android:id="@+id/synopSa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="@dimen/margin_mid"
+                    android:layout_marginLeft="@dimen/margin_mid"
                     android:textColor="#000"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/margin_mid_extra_small"
                     android:fontFamily="@font/helveticaneue_medium"
-                    android:textSize="14sp"
+                    android:textSize="@dimen/text_medium_size"
                     />
             </LinearLayout>
 

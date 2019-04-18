@@ -6,38 +6,38 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name="com.rifqit.animeList2.Database.MyApplication"
+        android:name=".Database.MyApplication"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        >
-        <activity android:name="com.rifqit.animeList2.search.DetailCharacter"></activity>
-        <activity android:name="com.rifqit.animeList2.search.DetailSearchManga" />
-        <activity android:name="com.rifqit.animeList2.search.DetailSearchAnime" />
-        <activity android:name="com.rifqit.animeList2.search.SearchAct" />
-        <activity android:name="com.rifqit.animeList2.season.detailSeason" />
-        <activity android:name="com.rifqit.animeList2.TopManga.topMangaDetail" />
-        <activity android:name="com.rifqit.animeList2.TopAnime.topAnimeDetail" />
-        <activity android:name="com.rifqit.animeList2.favorite.DetailFav" />
-        <activity android:name="com.rifqit.animeList2.favorite.Favorite" />
-        <activity android:name="com.rifqit.animeList2.TopManga.OneShots" />
-        <activity android:name="com.rifqit.animeList2.TopManga.Menhua" />
-        <activity android:name="com.rifqit.animeList2.TopManga.Menhwa" />
-        <activity android:name="com.rifqit.animeList2.TopManga.Doujin" />
-        <activity android:name="com.rifqit.animeList2.TopManga.Novel" />
-        <activity android:name="com.rifqit.animeList2.TopManga.Manga" />
-        <activity android:name="com.rifqit.animeList2.TopAnime.Ova" />
-        <activity android:name="com.rifqit.animeList2.TopAnime.Tv" />
-        <activity android:name="com.rifqit.animeList2.TopAnime.Upcoming" />
-        <activity android:name="com.rifqit.animeList2.TopAnime.Special" />
-        <activity android:name="com.rifqit.animeList2.TopAnime.Airing" />
-        <activity android:name="com.rifqit.animeList2.season.more" />
-        <activity android:name="com.rifqit.animeList2.season.detailMore" />
-        <activity android:name="com.rifqit.animeList2.MainActivity" />
-        <activity android:name="com.rifqit.animeList2.Splashscreen">
+        android:theme="@style/AppTheme">
+        <activity android:name=".Detail_slider"></activity>
+        <activity android:name=".search.DetailCharacter" />
+        <activity android:name=".search.DetailSearchManga" />
+        <activity android:name=".search.DetailSearchAnime" />
+        <activity android:name=".search.SearchAct" />
+        <activity android:name=".season.detailSeason" />
+        <activity android:name=".TopManga.topMangaDetail" />
+        <activity android:name=".TopAnime.topAnimeDetail" />
+        <activity android:name=".favorite.DetailFav" />
+        <activity android:name=".favorite.Favorite" />
+        <activity android:name=".TopManga.OneShots" />
+        <activity android:name=".TopManga.Menhua" />
+        <activity android:name=".TopManga.Menhwa" />
+        <activity android:name=".TopManga.Doujin" />
+        <activity android:name=".TopManga.Novel" />
+        <activity android:name=".TopManga.Manga" />
+        <activity android:name=".TopAnime.Ova" />
+        <activity android:name=".TopAnime.Tv" />
+        <activity android:name=".TopAnime.Upcoming" />
+        <activity android:name=".TopAnime.Special" />
+        <activity android:name=".TopAnime.Airing" />
+        <activity android:name=".season.more" />
+        <activity android:name=".season.detailMore" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Splashscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -10,27 +10,27 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/oooo">
+        android:background="@color/orange">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbarSearch"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/margin_medium"
             app:contentInsetStart="0dp">
 
             <ImageButton
                 android:id="@+id/back3"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="@dimen/margin_small"
                 android:background="@android:color/transparent"
                 android:src="@drawable/ic_back_white" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="@dimen/margin_medium"
                 >
 
                 <TextView
@@ -42,7 +42,7 @@
                     android:layout_centerHorizontal="true"
                     android:textColor="#FFFF"
                     android:fontFamily="@font/chlorinr"
-                    android:textSize="18sp"/>
+                    android:textSize="@dimen/title_small_size"/>
             </RelativeLayout>
         </android.support.v7.widget.Toolbar>
     </LinearLayout>
@@ -60,9 +60,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp">
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_small">
 
                 <TextView
                     android:id="@+id/musimm"
@@ -86,8 +86,8 @@
                 android:id="@+id/recyclerSeasonMore"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp">
+                android:paddingLeft="@dimen/margin_small"
+                android:paddingRight="@dimen/margin_small">
 
             </android.support.v7.widget.RecyclerView>
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".season.detailSeason"
+    tools:context="com.rifqit.animeList2.Detail_slider"
     android:orientation="vertical">
 
     <LinearLayout
@@ -24,7 +24,7 @@
                 >
 
                 <ImageButton
-                    android:id="@+id/back2M"
+                    android:id="@+id/backSd"
                     android:layout_width="@dimen/medium_action_icon"
                     android:layout_height="match_parent"
                     android:src="@drawable/ic_back_white"
@@ -43,7 +43,7 @@
                     android:textSize="@dimen/title_small_size"/>
 
                 <ToggleButton
-                    android:id="@+id/toggle2"
+                    android:id="@+id/toggleSd"
                     android:layout_width="@dimen/medium_action_icon"
                     android:layout_height="@dimen/medium_action_icon"
                     android:layout_marginRight="@dimen/margin_small"
@@ -66,7 +66,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tittleM"
+                android:id="@+id/tittleSd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -87,7 +87,7 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/imageM"
+                        android:id="@+id/imageSd"
                         android:layout_width="180dp"
                         android:layout_height="220dp"
                         android:layout_margin="15dp"
@@ -112,7 +112,7 @@
                             android:textColor="@color/orange"/>
 
                         <TextView
-                            android:id="@+id/typeM"
+                            android:id="@+id/typeSd"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="TV"
@@ -131,7 +131,7 @@
                             android:textColor="@color/orange"/>
 
                         <TextView
-                            android:id="@+id/episodesM"
+                            android:id="@+id/episodesSd"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="unknown"
@@ -150,7 +150,7 @@
                             android:textColor="@color/orange"/>
 
                         <TextView
-                            android:id="@+id/membersM"
+                            android:id="@+id/memberSd"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="234343"
@@ -171,7 +171,7 @@
                                 android:id="@+id/imgw"/>
 
                             <TextView
-                                android:id="@+id/webM"
+                                android:id="@+id/webSd"
                                 android:layout_toRightOf="@id/imgw"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -212,7 +212,7 @@
                 </RelativeLayout>
 
                 <TextView
-                    android:id="@+id/synopM"
+                    android:id="@+id/synopSd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="@dimen/margin_mid"
@@ -228,6 +228,7 @@
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
+
 
 
 </LinearLayout>
