@@ -559,7 +559,7 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
                                 textSliderView
                                         .description(name)
                                         .image(HashMapForURL.get(name))
-                                        .setScaleType(BaseSliderView.ScaleType.Fit)
+                                        .setScaleType(BaseSliderView.ScaleType.CenterCrop)
                                         .setOnSliderClickListener(MainActivity.this);
 
                                 textSliderView.bundle(new Bundle());
@@ -578,7 +578,7 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
                                 });
                             }
 
-                            sliderLayout.setPresetTransformer(SliderLayout.Transformer.DepthPage);
+                            sliderLayout.setPresetTransformer(SliderLayout.Transformer.ZoomOut);
                             sliderLayout.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
                             sliderLayout.setCustomAnimation(new DescriptionAnimation());
                             sliderLayout.setDuration(3000);
@@ -586,7 +586,7 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
                         }
 
                     } catch (JSONException e) {
-//                        Toast.makeText(MainActivity.this, e.getLocalizedMessage()+111, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, e.getLocalizedMessage()+111, Toast.LENGTH_SHORT).show();
                         e.printStackTrace();
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -597,7 +597,7 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
                         @Override
                         public void
                         run() {
-//                            Toast.makeText(getApplicationContext(), "Couldn't get json from server. Check LoCat for possible errors!1",Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Couldn't get json from server. Check LoCat for possible errors!1",Toast.LENGTH_LONG).show();
                         }
                     });
                 }
@@ -612,8 +612,7 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
     @Override
     protected void onStop() {
 
-        sliderLayout.stopAutoCycle();
-
+        sliderLayout.startAutoCycle();
         super.onStop();
     }
 
