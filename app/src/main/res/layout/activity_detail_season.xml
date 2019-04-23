@@ -56,176 +56,228 @@
         </android.support.v7.widget.Toolbar>
     </LinearLayout>
 
-    <android.support.v4.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
+        <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/tittleD"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:textColor="#000"
-                android:fontFamily="@font/helvetica_neu_bold"
-                android:layout_marginRight="@dimen/margin_medium"
-                android:layout_marginLeft="@dimen/margin_medium"
-                android:layout_marginTop="@dimen/margin_small"
-                android:textSize="@dimen/text_big_size"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/imageD"
-                        android:layout_width="180dp"
-                        android:layout_height="220dp"
-                        android:layout_margin="@dimen/margin_medium"
-                        android:scaleType="fitXY"
-                        />
+                    android:layout_height="match_parent"
+                    >
 
                     <LinearLayout
+                        android:id="@+id/linlinlin"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:layout_marginTop="@dimen/margin_medium"
-                        android:layout_marginRight="@dimen/margin_medium"
-                        android:layout_marginBottom="@dimen/medium_action_icon">
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:id="@+id/tittleD"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="type"
+                            android:layout_gravity="center_horizontal"
+                            android:textColor="#000"
+                            android:fontFamily="@font/helvetica_neu_bold"
+                            android:layout_marginRight="@dimen/margin_medium"
+                            android:layout_marginLeft="@dimen/margin_medium"
                             android:layout_marginTop="@dimen/margin_small"
-                            android:fontFamily="@font/helveticaneue_medium"
-                            android:textSize="@dimen/text_small_size"
-                            android:textColor="@color/orange"/>
-
-                        <TextView
-                            android:id="@+id/type"
+                            android:textSize="@dimen/text_big_size"/>
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TV"
-                            android:fontFamily="@font/helveticaneue_medium"
-                            android:textColor="#000"
-                            android:textSize="@dimen/text_big_size"
-                            />
+                            android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="episodes"
-                            android:layout_marginTop="@dimen/margin_small"
-                            android:fontFamily="@font/helveticaneue_medium"
-                            android:textSize="@dimen/text_small_size"
-                            android:textColor="@color/orange"/>
+                            <ImageView
+                                android:id="@+id/imageD"
+                                android:layout_width="180dp"
+                                android:layout_height="220dp"
+                                android:layout_margin="@dimen/margin_medium"
+                                android:scaleType="fitXY"
+                                />
 
-                        <TextView
-                            android:id="@+id/episodes"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="unknown"
-                            android:fontFamily="@font/helveticaneue_medium"
-                            android:textColor="#000"
-                            android:textSize="@dimen/text_small_size"
-                            />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:layout_marginTop="@dimen/margin_medium"
+                                android:layout_marginRight="@dimen/margin_medium"
+                                android:layout_marginBottom="@dimen/medium_action_icon">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="members"
-                            android:layout_marginTop="10dp"
-                            android:fontFamily="@font/helveticaneue_medium"
-                            android:textSize="@dimen/text_small_size"
-                            android:textColor="@color/orange"/>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="type"
+                                    android:layout_marginTop="@dimen/margin_small"
+                                    android:fontFamily="@font/helveticaneue_medium"
+                                    android:textSize="@dimen/text_small_size"
+                                    android:textColor="@color/orange"/>
 
-                        <TextView
-                            android:id="@+id/members"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="234343"
-                            android:fontFamily="@font/helveticaneue_medium"
-                            android:textColor="#000"
-                            android:textSize="@dimen/text_big_size"
-                            />
+                                <TextView
+                                    android:id="@+id/type"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="TV"
+                                    android:fontFamily="@font/helveticaneue_medium"
+                                    android:textColor="#000"
+                                    android:textSize="@dimen/text_big_size"
+                                    />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="episodes"
+                                    android:layout_marginTop="@dimen/margin_small"
+                                    android:fontFamily="@font/helveticaneue_medium"
+                                    android:textSize="@dimen/text_small_size"
+                                    android:textColor="@color/orange"/>
+
+                                <TextView
+                                    android:id="@+id/episodes"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="unknown"
+                                    android:fontFamily="@font/helveticaneue_medium"
+                                    android:textColor="#000"
+                                    android:textSize="@dimen/text_small_size"
+                                    />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="members"
+                                    android:layout_marginTop="10dp"
+                                    android:fontFamily="@font/helveticaneue_medium"
+                                    android:textSize="@dimen/text_small_size"
+                                    android:textColor="@color/orange"/>
+
+                                <TextView
+                                    android:id="@+id/members"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="234343"
+                                    android:fontFamily="@font/helveticaneue_medium"
+                                    android:textColor="#000"
+                                    android:textSize="@dimen/text_big_size"
+                                    />
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/ic_web_orange"
+                                        android:layout_alignParentBottom="true"
+                                        android:id="@+id/imgw4"/>
+
+                                    <TextView
+                                        android:id="@+id/web"
+                                        android:layout_toRightOf="@id/imgw4"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="go to Web >>"
+                                        android:layout_marginTop="@dimen/margin_small"
+                                        android:fontFamily="@font/helveticaneue_medium"
+                                        android:textColor="@color/orange"
+                                        android:textSize="@dimen/text_big_size"
+                                        android:gravity="bottom"
+                                        android:layout_alignParentBottom="true"
+                                        />
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
 
                         <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <ImageView
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/margin_medium"
+                            android:layout_marginLeft="@dimen/margin_medium"
+                            android:background="@drawable/backorg">
+                            <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/ic_web_orange"
-                                android:layout_alignParentBottom="true"
-                                android:id="@+id/imgw4"/>
-
-                            <TextView
-                                android:id="@+id/web"
-                                android:layout_toRightOf="@id/imgw4"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="go to Web >>"
-                                android:layout_marginTop="@dimen/margin_small"
-                                android:fontFamily="@font/helveticaneue_medium"
-                                android:textColor="@color/orange"
-                                android:textSize="@dimen/text_big_size"
-                                android:gravity="bottom"
-                                android:layout_alignParentBottom="true"
-                                />
+                                android:text="Synopsis"
+                                android:layout_centerVertical="true"
+                                android:layout_centerHorizontal="true"
+                                android:textSize="@dimen/text_medium_size"
+                                android:layout_margin="@dimen/margin_mid_extra_small"
+                                android:fontFamily="@font/helvetica_neu_bold"
+                                android:textColor="#FFFF"/>
                         </RelativeLayout>
 
-
+                        <TextView
+                            android:id="@+id/synopD"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/margin_medium"
+                            android:layout_marginLeft="@dimen/margin_medium"
+                            android:textColor="#000"
+                            android:layout_marginTop="@dimen/margin_mid_extra_small"
+                            android:fontFamily="@font/helveticaneue_medium"
+                            android:textSize="@dimen/text_medium_size"
+                            />
                     </LinearLayout>
 
+                    <!--<android.support.v4.view.ViewPager-->
+                    <!--android:id="@+id/viewPagerRecom1"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentBottom="true">-->
+                    <!--</android.support.v4.view.ViewPager>-->
 
-                </LinearLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/margin_medium"
-                    android:layout_marginLeft="@dimen/margin_medium"
-                    android:background="@drawable/backorg">
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <RelativeLayout
+                        android:id="@+id/kookkook"
+                        android:layout_below="@id/linlinlin"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Synopsis"
-                        android:layout_centerVertical="true"
-                        android:layout_centerHorizontal="true"
-                        android:textSize="@dimen/text_medium_size"
-                        android:layout_margin="@dimen/margin_mid_extra_small"
-                        android:fontFamily="@font/helvetica_neu_bold"
-                        android:textColor="#FFFF"/>
+                        android:layout_marginTop="@dimen/margin_medium"
+                        android:layout_marginRight="@dimen/margin_medium"
+                        android:layout_marginLeft="@dimen/margin_medium"
+                        android:background="@drawable/backorg">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Recommendation"
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true"
+                            android:textSize="@dimen/text_medium_size"
+                            android:layout_margin="@dimen/margin_mid_extra_small"
+                            android:fontFamily="@font/helvetica_neu_bold"
+                            android:textColor="#FFFF"/>
+                    </RelativeLayout>
+
+                    <ProgressBar
+                        android:id="@+id/progress5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/kookkook"
+                        android:visibility="gone"/>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_below="@id/kookkook"
+                        android:id="@+id/recyclerRecomendDetail1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/margin_medium"
+                        android:paddingBottom="@dimen/margin_medium"
+                        android:paddingRight="@dimen/margin_medium"
+                        android:paddingTop="@dimen/margin_mid"
+                        android:clipToPadding="false"
+                        android:layout_alignParentBottom="true">
+                    </android.support.v7.widget.RecyclerView>
                 </RelativeLayout>
 
-                <TextView
-                    android:id="@+id/synopD"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/margin_medium"
-                    android:layout_marginLeft="@dimen/margin_medium"
-                    android:textColor="#000"
-                    android:layout_marginTop="@dimen/margin_mid_extra_small"
-                    android:fontFamily="@font/helveticaneue_medium"
-                    android:textSize="@dimen/text_medium_size"
-                    />
             </LinearLayout>
 
-
-        </LinearLayout>
-
-    </android.support.v4.widget.NestedScrollView>
+        </android.support.v4.widget.NestedScrollView>
 
 
 </LinearLayout>

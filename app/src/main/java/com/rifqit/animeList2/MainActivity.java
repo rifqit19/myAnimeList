@@ -577,9 +577,8 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
                                     }
                                 });
                             }
-
                             sliderLayout.setPresetTransformer(SliderLayout.Transformer.ZoomOut);
-                            sliderLayout.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
+                            sliderLayout.setPresetIndicator(SliderLayout.PresetIndicators.Right_Bottom);
                             sliderLayout.setCustomAnimation(new DescriptionAnimation());
                             sliderLayout.setDuration(3000);
                             sliderLayout.addOnPageChangeListener(MainActivity.this);
@@ -618,7 +617,6 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
 
     @Override
     public void onSliderClick(BaseSliderView slider) {
-//        Toast.makeText(this,slider.getBundle().get("extra") + "",Toast.LENGTH_SHORT).show();
 
     }
 

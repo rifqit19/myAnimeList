@@ -31,5 +31,23 @@ public interface GetDataService {
     Call<ResponseBody>getSchedule(
             @Path("day") String day
     );
+    @GET("anime/{malId}/recommendations")
+    Call<ResponseBody>getRecomendation(
+            @Path("malId") Integer malId
+    );
+
+    @GET("manga/{malId}/recommendations")
+    Call<ResponseBody>getRecomendationManga(
+            @Path("malId") Integer malId
+    );
+
+    @GET("anime/{malId}")
+    Call<ResponseBody>getDetailRecomendationAnime(
+            @Path("malId") Integer malId
+    );
+    @GET("manga/{malId}")
+    Call<ResponseBody>getDetailRecomendationManga(
+            @Path("malId") Integer malId
+    );
 
 }

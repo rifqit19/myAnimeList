@@ -15,7 +15,7 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/blahkTrans"
+    android:background="@color/blahk_alpha_70"
     android:layout_alignParentBottom="true"
     android:orientation="vertical">
 

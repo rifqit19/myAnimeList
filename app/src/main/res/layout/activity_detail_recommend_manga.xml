@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".search.DetailSearchAnime"
+    tools:context="com.rifqit.animeList2.DetailRecommendManga"
     android:orientation="vertical">
 
     <LinearLayout
@@ -24,10 +24,10 @@
                 >
 
                 <ImageButton
-                    android:id="@+id/back2Sa"
+                    android:id="@+id/back2Drm"
                     android:layout_width="@dimen/medium_action_icon"
                     android:layout_height="match_parent"
-                    android:src="@drawable/ic_back_white"
+                    app:srcCompat="@drawable/ic_back_white"
                     android:layout_marginLeft="@dimen/margin_small"
                     android:background="@android:color/transparent"/>
 
@@ -43,7 +43,7 @@
                     android:textSize="@dimen/title_small_size"/>
 
                 <ToggleButton
-                    android:id="@+id/toggleSa"
+                    android:id="@+id/toggleDrm"
                     android:layout_width="@dimen/medium_action_icon"
                     android:layout_height="@dimen/medium_action_icon"
                     android:layout_marginRight="@dimen/margin_small"
@@ -65,13 +65,13 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
-                android:id="@+id/linlinlin3"
+                android:id="@+id/linlinlinDrm"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/tittleSa"
+                    android:id="@+id/tittleDrm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -92,7 +92,7 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:id="@+id/imageSa"
+                            android:id="@+id/imageDrm"
                             android:layout_width="180dp"
                             android:layout_height="220dp"
                             android:layout_margin="15dp"
@@ -117,7 +117,7 @@
                                 android:textColor="@color/orange"/>
 
                             <TextView
-                                android:id="@+id/typeSa"
+                                android:id="@+id/typeDrm"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="TV"
@@ -136,7 +136,7 @@
                                 android:textColor="@color/orange"/>
 
                             <TextView
-                                android:id="@+id/episodesSa"
+                                android:id="@+id/episodesDrm"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="unknown"
@@ -155,7 +155,7 @@
                                 android:textColor="@color/orange"/>
 
                             <TextView
-                                android:id="@+id/membersSa"
+                                android:id="@+id/membersDrm"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="234343"
@@ -186,7 +186,7 @@
                                         android:textColor="@color/white"/>
 
                                     <TextView
-                                        android:id="@+id/scoreSa"
+                                        android:id="@+id/scoreDrm"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:textAlignment="center"
@@ -199,12 +199,12 @@
                                 <ImageView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:src="@drawable/ic_web_orange"
+                                    app:srcCompat="@drawable/ic_web_orange"
                                     android:layout_alignParentBottom="true"
                                     android:id="@+id/imgw"/>
 
                                 <TextView
-                                    android:id="@+id/webSa"
+                                    android:id="@+id/webDrm"
                                     android:layout_toRightOf="@id/imgw"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
@@ -245,7 +245,7 @@
                     </RelativeLayout>
 
                     <TextView
-                        android:id="@+id/synopSa"
+                        android:id="@+id/synopDrm"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="@dimen/margin_mid"
@@ -260,8 +260,8 @@
             </LinearLayout>
 
             <RelativeLayout
-                android:id="@+id/kookkook3"
-                android:layout_below="@id/linlinlin3"
+                android:id="@+id/kookkookDrm"
+                android:layout_below="@id/linlinlinDrm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_medium"
@@ -281,16 +281,16 @@
             </RelativeLayout>
 
             <ProgressBar
-                android:id="@+id/progress3"
+                android:id="@+id/progressDrm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/kookkook3"
+                android:layout_below="@id/kookkookDrm"
                 android:visibility="gone"/>
 
 
             <android.support.v7.widget.RecyclerView
-                android:layout_below="@id/kookkook3"
-                android:id="@+id/recyclerRecomendDetail4"
+                android:layout_below="@id/kookkookDrm"
+                android:id="@+id/recyclerRecomendDetailDrm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="@dimen/margin_medium"
@@ -300,11 +300,8 @@
                 android:clipToPadding="false"
                 android:layout_alignParentBottom="true">
             </android.support.v7.widget.RecyclerView>
-
         </RelativeLayout>
-
     </android.support.v4.widget.NestedScrollView>
-
 
 
 </LinearLayout>

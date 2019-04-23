@@ -5,23 +5,41 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.google.gson.Gson;
-import com.rifqit.animeList2.favorite.FavObj;
+import com.rifqit.animeList2.AdapterRecommndation;
+import com.rifqit.animeList2.Database.GetDataService;
 import com.rifqit.animeList2.Database.RealmHelper;
+import com.rifqit.animeList2.Database.RetrofitCilentInstance;
 import com.rifqit.animeList2.R;
+import com.rifqit.animeList2.favorite.FavObj;
+import com.rifqit.animeList2.recommObj;
 import com.squareup.picasso.Picasso;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.util.ArrayList;
 
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class DetailSearchAnime extends AppCompatActivity {
 
@@ -33,6 +51,14 @@ public class DetailSearchAnime extends AppCompatActivity {
     RealmHelper realmHelper;
     ToggleButton toggleButton;
     SearchObj searchObjs = new SearchObj();
+
+//    ProgressDialog progressDialog;
+    ProgressBar progressBar;
+    private String TAG = DetailSearchAnime.class.getSimpleName();
+    ArrayList<recommObj> recommObjs = new ArrayList<>();
+    AdapterRecommndation adapterRecommndation;
+    RecyclerView recyclerView;
+
 
 
     @Override
@@ -50,6 +76,7 @@ public class DetailSearchAnime extends AppCompatActivity {
         backk = findViewById(R.id.back2Sa);
         toggleButton = findViewById(R.id.toggleSa);
         scoreD = findViewById(R.id.scoreSa);
+        progressBar = findViewById(R.id.progress3);
 
         backk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,6 +101,9 @@ public class DetailSearchAnime extends AppCompatActivity {
         final String syn = searchObjs.getSynopsis();
         final String wb = searchObjs.getUrl();
         Double sc = searchObjs.getScore();
+
+        generateDataList();
+        recommendation(malId);
 
         ttlD.setText(t);
         synopD.setText(syn);
@@ -136,6 +166,79 @@ public class DetailSearchAnime extends AppCompatActivity {
                 }
             }
         });
+    }
 
+    public void recommendation(Integer id){
+//        progressDialog = new ProgressDialog(DetailSearchAnime.this);
+//        progressDialog.setMessage("Loading....");
+//        progressDialog.show();
+        progressBar.setVisibility(View.VISIBLE);
+        GetDataService service = RetrofitCilentInstance.getRetrofitInstance().create(GetDataService.class);
+        Call<ResponseBody> call = service.getRecomendation(id);
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+//                progressDialog.dismiss();
+                progressBar.setVisibility(View.GONE);
+                if (response.isSuccessful()) {
+                    try {
+                        String respon = response.body().string();
+                        JSONObject jsonObj = new JSONObject(respon);
+                        JSONArray api = jsonObj.getJSONArray("recommendations");
+                        for (int i = 0; i < api.length(); i++){
+                            JSONObject c = api.getJSONObject(i);
+
+                            Integer mal_id1 = c.getInt("mal_id");
+                            String url1 = c.getString("url");
+                            String tittle1 = c.getString("title");
+                            String recommendationUrl = c.getString("recommendation_url");
+                            String imageUrl1 = c.getString("image_url");
+                            Integer recommendationCount = c.getInt("recommendation_count");
+
+                            final recommObj s = new recommObj();
+                            s.setMalId(mal_id1);
+                            s.setUrl(url1);
+                            s.setImageUrl(imageUrl1);
+                            s.setTitle(tittle1);
+                            s.setRecommendationUrl(recommendationUrl);
+                            s.setRecommendationCount(recommendationCount);
+                            recommObjs.add(s);
+
+                        }
+//                        myCustomPagerAdapter.notifyDataSetChanged();
+                        adapterRecommndation.notifyDataSetChanged();
+                    } catch (JSONException e) {
+                        Toast.makeText(DetailSearchAnime.this, e.getLocalizedMessage()+111, Toast.LENGTH_SHORT).show();
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    Log.e(TAG, "Souldn't get json from server.1");
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void
+                        run() {
+                            Toast.makeText(getApplicationContext(), "Couldn't get json from server. Check LoCat for possible errors!1",Toast.LENGTH_LONG).show();
+                        }
+                    });
+                }
+            }
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+//                progressDialog.dismiss();
+                progressBar.setVisibility(View.GONE);
+                Toast.makeText(DetailSearchAnime.this, t.getLocalizedMessage()+11, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void generateDataList() {
+        recyclerView = findViewById(R.id.recyclerRecomendDetail4);
+        adapterRecommndation = new AdapterRecommndation(DetailSearchAnime.this,recommObjs);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(DetailSearchAnime.this,LinearLayoutManager.HORIZONTAL, false);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setNestedScrollingEnabled(false);
+        recyclerView.setAdapter(adapterRecommndation);
     }
 }

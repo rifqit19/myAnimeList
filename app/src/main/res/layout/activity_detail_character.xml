@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/orange">
+        android:background="@color/toolbar_color">
 
         <android.support.v7.widget.Toolbar
             android:layout_width="match_parent"

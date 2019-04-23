@@ -27,7 +27,7 @@
                     android:id="@+id/back2tm"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:src="@drawable/ic_back_white"
+                    app:srcCompat="@drawable/ic_back_white"
                     android:layout_marginLeft="@dimen/margin_small"
                     android:background="@android:color/transparent"/>
 
@@ -72,170 +72,216 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/tittleDtm"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:textColor="#000"
-                android:fontFamily="@font/helvetica_neu_bold"
-                android:layout_marginRight="@dimen/margin_medium"
-                android:layout_marginLeft="@dimen/margin_medium"
-                android:layout_marginTop="@dimen/margin_small"
-                android:textSize="@dimen/text_big_size"/>
             <LinearLayout
+                android:id="@+id/linlinlin6"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
+                <TextView
+                    android:id="@+id/tittleDtm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#000"
+                    android:fontFamily="@font/helvetica_neu_bold"
+                    android:layout_marginRight="@dimen/margin_medium"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:textSize="@dimen/text_big_size"/>
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/imageDtm"
-                        android:layout_width="180dp"
-                        android:layout_height="220dp"
-                        android:layout_margin="@dimen/margin_medium"
-                        android:scaleType="fitXY"
-                        />
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginRight="15dp"
-                        android:layout_marginBottom="15dp">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="type"
-                            android:layout_marginTop="@dimen/margin_small"
-                            android:fontFamily="@font/helveticaneue_medium"
-                            android:textSize="@dimen/text_small_size"
-                            android:textColor="@color/orange"/>
-
-                        <TextView
-                            android:id="@+id/typeDtm"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="TV"
-                            android:fontFamily="@font/helveticaneue_medium"
-                            android:textColor="#000"
-                            android:textSize="@dimen/text_big_size"
+                        <ImageView
+                            android:id="@+id/imageDtm"
+                            android:layout_width="180dp"
+                            android:layout_height="220dp"
+                            android:layout_margin="@dimen/margin_medium"
+                            android:scaleType="fitXY"
                             />
 
-                        <TextView
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="volume"
-                            android:layout_marginTop="@dimen/margin_small"
-                            android:fontFamily="@font/helveticaneue_medium"
-                            android:textSize="@dimen/text_small_size"
-                            android:textColor="@color/orange"/>
-
-                        <TextView
-                            android:id="@+id/episodesDtm"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="unknown"
-                            android:fontFamily="@font/helveticaneue_medium"
-                            android:textColor="#000"
-                            android:textSize="@dimen/text_big_size"
-                            />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="members"
-                            android:layout_marginTop="@dimen/margin_small"
-                            android:fontFamily="@font/helveticaneue_medium"
-                            android:textSize="@dimen/text_small_size"
-                            android:textColor="@color/orange"/>
-
-                        <TextView
-                            android:id="@+id/membersDtm"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="234343"
-                            android:fontFamily="@font/helveticaneue_medium"
-                            android:textColor="#000"
-                            android:textSize="@dimen/text_big_size"
-                            />
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/ic_web_orange"
-                                android:layout_alignParentBottom="true"
-                                android:id="@+id/imgw6"/>
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginBottom="15dp">
 
                             <TextView
-                                android:id="@+id/webDtm"
-                                android:layout_toRightOf="@id/imgw6"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="go to Web >>"
+                                android:text="type"
                                 android:layout_marginTop="@dimen/margin_small"
                                 android:fontFamily="@font/helveticaneue_medium"
-                                android:textColor="@color/orange"
-                                android:textSize="@dimen/text_big_size"
-                                android:gravity="bottom"
-                                android:layout_alignParentBottom="true"
-                                />
-                        </RelativeLayout>
+                                android:textSize="@dimen/text_small_size"
+                                android:textColor="@color/orange"/>
 
+                            <TextView
+                                android:id="@+id/typeDtm"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="TV"
+                                android:fontFamily="@font/helveticaneue_medium"
+                                android:textColor="#000"
+                                android:textSize="@dimen/text_big_size"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="volume"
+                                android:layout_marginTop="@dimen/margin_small"
+                                android:fontFamily="@font/helveticaneue_medium"
+                                android:textSize="@dimen/text_small_size"
+                                android:textColor="@color/orange"/>
+
+                            <TextView
+                                android:id="@+id/episodesDtm"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="unknown"
+                                android:fontFamily="@font/helveticaneue_medium"
+                                android:textColor="#000"
+                                android:textSize="@dimen/text_big_size"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="members"
+                                android:layout_marginTop="@dimen/margin_small"
+                                android:fontFamily="@font/helveticaneue_medium"
+                                android:textSize="@dimen/text_small_size"
+                                android:textColor="@color/orange"/>
+
+                            <TextView
+                                android:id="@+id/membersDtm"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="234343"
+                                android:fontFamily="@font/helveticaneue_medium"
+                                android:textColor="#000"
+                                android:textSize="@dimen/text_big_size"
+                                />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    app:srcCompat="@drawable/ic_web_orange"
+                                    android:layout_alignParentBottom="true"
+                                    android:id="@+id/imgw6"/>
+
+                                <TextView
+                                    android:id="@+id/webDtm"
+                                    android:layout_toRightOf="@id/imgw6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="go to Web >>"
+                                    android:layout_marginTop="@dimen/margin_small"
+                                    android:fontFamily="@font/helveticaneue_medium"
+                                    android:textColor="@color/orange"
+                                    android:textSize="@dimen/text_big_size"
+                                    android:gravity="bottom"
+                                    android:layout_alignParentBottom="true"
+                                    />
+                            </RelativeLayout>
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
-
-                </LinearLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/margin_medium"
-                    android:layout_marginLeft="@dimen/margin_medium"
-                    android:background="@drawable/backorg">
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <RelativeLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Synopsis"
-                        android:layout_centerVertical="true"
-                        android:layout_centerHorizontal="true"
-                        android:textSize="@dimen/text_medium_size"
-                        android:layout_margin="@dimen/margin_mid_extra_small"
-                        android:fontFamily="@font/helvetica_neu_bold"
-                        android:textColor="#FFFF"/>
-                </RelativeLayout>
+                        android:layout_marginRight="@dimen/margin_medium"
+                        android:layout_marginLeft="@dimen/margin_medium"
+                        android:background="@drawable/backorg">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Synopsis"
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true"
+                            android:textSize="@dimen/text_medium_size"
+                            android:layout_margin="@dimen/margin_mid_extra_small"
+                            android:fontFamily="@font/helvetica_neu_bold"
+                            android:textColor="#FFFF"/>
+                    </RelativeLayout>
 
-                <TextView
-                    android:id="@+id/synopDtm"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/margin_medium"
-                    android:layout_marginLeft="@dimen/margin_medium"
-                    android:textColor="#000"
-                    android:layout_marginTop="@dimen/margin_mid_extra_small"
-                    android:fontFamily="@font/helveticaneue_medium"
-                    android:textSize="@dimen/margin_medium"
-                    />
+                    <TextView
+                        android:id="@+id/synopDtm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_medium"
+                        android:layout_marginLeft="@dimen/margin_medium"
+                        android:textColor="#000"
+                        android:layout_marginTop="@dimen/margin_mid_extra_small"
+                        android:fontFamily="@font/helveticaneue_medium"
+                        android:textSize="@dimen/margin_medium"
+                        />
+                </LinearLayout>
             </LinearLayout>
 
 
-        </LinearLayout>
+            <RelativeLayout
+                android:id="@+id/kookkook6"
+                android:layout_below="@id/linlinlin6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:background="@drawable/backorg">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recommendation"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="@dimen/text_medium_size"
+                    android:layout_margin="@dimen/margin_mid_extra_small"
+                    android:fontFamily="@font/helvetica_neu_bold"
+                    android:textColor="#FFFF"/>
+            </RelativeLayout>
+
+            <ProgressBar
+                android:id="@+id/progress1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/kookkook6"
+                android:visibility="gone"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_below="@id/kookkook6"
+                android:id="@+id/recyclerRecomendDetail7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/margin_medium"
+                android:paddingBottom="@dimen/margin_medium"
+                android:paddingRight="@dimen/margin_medium"
+                android:paddingTop="@dimen/margin_mid"
+                android:clipToPadding="false"
+                android:layout_alignParentBottom="true">
+            </android.support.v7.widget.RecyclerView>
+
+
+        </RelativeLayout>
 
     </android.support.v4.widget.NestedScrollView>
 
