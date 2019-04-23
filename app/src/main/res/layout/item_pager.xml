@@ -7,11 +7,10 @@
 
     <ImageView
         android:id="@+id/coverRec"
-        android:layout_marginTop="@dimen/margin_extra_small"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="fitXY"
-        />
+        android:layout_marginTop="@dimen/margin_extra_small"
+        android:scaleType="fitXY" />
 
     <RelativeLayout
         android:layout_width="35dp"
@@ -29,12 +28,9 @@
             android:textSize="@dimen/text_medium_size"
             android:fontFamily="@font/helveticaneue_medium"
             android:textColor="@color/white"/>
-
-
-
     </RelativeLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/blahk_alpha_70"
@@ -71,6 +67,6 @@
             <!--android:textOff=""-->
             <!--android:layout_weight="1"/>-->
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </RelativeLayout>

@@ -198,19 +198,19 @@
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginRight="@dimen/margin_medium"
-                            android:layout_marginLeft="@dimen/margin_medium"
-                            android:background="@drawable/backorg">
+                            android:layout_marginRight="@dimen/margin_mid"
+                            android:layout_marginLeft="@dimen/margin_mid"
+                            >
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Synopsis"
                                 android:layout_centerVertical="true"
                                 android:layout_centerHorizontal="true"
-                                android:textSize="@dimen/text_medium_size"
+                                android:textSize="@dimen/title_small_size"
                                 android:layout_margin="@dimen/margin_mid_extra_small"
                                 android:fontFamily="@font/helvetica_neu_bold"
-                                android:textColor="#FFFF"/>
+                                android:textColor="@color/orange"/>
                         </RelativeLayout>
 
                         <TextView
@@ -240,18 +240,17 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/margin_medium"
                         android:layout_marginRight="@dimen/margin_medium"
-                        android:layout_marginLeft="@dimen/margin_medium"
-                        android:background="@drawable/backorg">
+                        android:layout_marginLeft="@dimen/margin_medium">
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Recommendation"
                             android:layout_centerVertical="true"
                             android:layout_centerHorizontal="true"
-                            android:textSize="@dimen/text_medium_size"
+                            android:textSize="@dimen/title_small_size"
                             android:layout_margin="@dimen/margin_mid_extra_small"
                             android:fontFamily="@font/helvetica_neu_bold"
-                            android:textColor="#FFFF"/>
+                            android:textColor="@color/orange"/>
                     </RelativeLayout>
 
                     <ProgressBar

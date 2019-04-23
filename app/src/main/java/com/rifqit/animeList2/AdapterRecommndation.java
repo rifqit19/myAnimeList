@@ -42,7 +42,6 @@ public class AdapterRecommndation  extends RecyclerView.Adapter<AdapterRecommnda
             count = mView.findViewById(R.id.recCount);
             imageView = mView.findViewById(R.id.coverRec);
             textView = mView.findViewById(R.id.namaAnimeRec);
-
         }
     }
     @Override
