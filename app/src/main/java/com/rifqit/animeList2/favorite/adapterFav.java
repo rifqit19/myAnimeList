@@ -31,7 +31,7 @@ public class adapterFav extends RecyclerView.Adapter<adapterFav.MyViewHolder> {
     RealmHelper realmHelper;
     Realm realm;
 
-    public adapterFav(Context context, List<FavObj> favObjs){
+    public adapterFav(Context context, List<FavObj> favObjs) {
         this.context = context;
         this.favObjs = favObjs;
     }
@@ -41,12 +41,12 @@ public class adapterFav extends RecyclerView.Adapter<adapterFav.MyViewHolder> {
         return favObjs.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView nama,eps,typ;
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+        TextView nama, eps, typ;
         ImageView cover;
         ToggleButton toggleButtonFav;
 
-        public MyViewHolder(View itemView){
+        public MyViewHolder(View itemView) {
             super(itemView);
             nama = itemView.findViewById(R.id.namaAnimeSeason);
             cover = itemView.findViewById(R.id.coverSeason);
@@ -81,43 +81,42 @@ public class adapterFav extends RecyclerView.Adapter<adapterFav.MyViewHolder> {
             public void onClick(View v) {
                 Intent i = new Intent(context, DetailFav.class);
 //                i.putExtra("hhhhh", new Gson().toJson(favObjs.get(position)));
-                i.putExtra("malId",model.getMalId().toString());
-                i.putExtra("tittle",model.getTitle());
-                i.putExtra("img",model.getImageUrl());
-                i.putExtra("type",model.getType());
-                i.putExtra("member",model.getMembers().toString());
-                i.putExtra("episode",model.getEpisode());
-                i.putExtra("web",model.getUrl());
-                i.putExtra("synopsis",model.getSynopsis());
+                i.putExtra("malId", model.getMalId().toString());
+                i.putExtra("tittle", model.getTitle());
+                i.putExtra("img", model.getImageUrl());
+                i.putExtra("type", model.getType());
+                i.putExtra("member", model.getMembers().toString());
+                i.putExtra("episode", model.getEpisode());
+                i.putExtra("web", model.getUrl());
+                i.putExtra("synopsis", model.getSynopsis());
                 v.getContext().startActivity(i);
             }
         });
 
-        final FavObj favObj1 = realm.where(FavObj.class).equalTo("malId",favObjs.get(position).getMalId()).findFirst();
+        final FavObj favObj1 = realm.where(FavObj.class).equalTo("malId", favObjs.get(position).getMalId()).findFirst();
 
         Log.e("idku ", favObjs.get(position).getMalId().toString());
 
         if (favObj1 == null) {
             holder.toggleButtonFav.setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.ic_fav));
-        }else{
+        } else {
             holder.toggleButtonFav.setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.ic_redfav));
         }
         holder.toggleButtonFav.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                FavObj favObj2 = realm.where(FavObj.class).equalTo("malId",favObjs.get(position).getMalId()).findFirst();
-                Log.e("checked", ""+position);
+                FavObj favObj2 = realm.where(FavObj.class).equalTo("malId", favObjs.get(position).getMalId()).findFirst();
+                Log.e("checked", "" + position);
                 if (favObj2 != null) {
                     holder.toggleButtonFav.setBackgroundResource(R.drawable.ic_fav);
-                    Log.e("id",favObjs.get(position).getMalId().toString());
+                    Log.e("id", favObjs.get(position).getMalId().toString());
                     realmHelper = new RealmHelper(realm);
                     realmHelper.delete(favObjs.get(position).getMalId());
                     notifyItemRemoved(position);
-                    Toast.makeText(context,"Item dihapus",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Item dihapus", Toast.LENGTH_SHORT).show();
 
-                }
-                else {
+                } else {
                     holder.toggleButtonFav.setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.ic_redfav));
 
                     favObj = new FavObj();
