@@ -254,7 +254,6 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
                 startActivity(a);
             }
         });
-
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(MainActivity.this, R.layout.custom_spinner) {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {

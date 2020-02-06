@@ -94,7 +94,7 @@ public class DetailRecommendAnime extends AppCompatActivity {
         recommObjs1 = new Gson().fromJson(locloc, recommObj.class);
 
         final Integer malid = recommObjs1.getMalId();
-        Log.e("dra", malid.toString());
+        Log.e("IDOKE", malid.toString());
 
         generateDataList();
         recommendation(malid);
