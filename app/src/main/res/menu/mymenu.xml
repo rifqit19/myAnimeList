@@ -9,4 +9,10 @@
         android:title="Favorite"
         app:showAsAction="never"/>
 
+    <item
+        android:id="@+id/about"
+        android:orderInCategory="100"
+        android:title="About"
+        app:showAsAction="never"/>
+
 </menu>

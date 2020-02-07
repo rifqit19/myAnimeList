@@ -418,6 +418,9 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
             Intent l = new Intent(MainActivity.this, Favorite.class);
             mainActivity.startActivityForResult(l,2);
             return true;
+        }else if (id == R.id.about){
+            Intent about = new Intent(MainActivity.this, AboutActivity.class);
+            startActivity(about);
         }
         return super.onOptionsItemSelected(item);
     }
